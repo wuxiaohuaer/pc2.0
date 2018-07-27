@@ -57,7 +57,7 @@ export default {
             height: 48px;
             margin-left:-15px; 
             margin-bottom: 16px;
-            border-bottom: 1px solid #eaeef1;
+            // border-bottom: 1px solid #eaeef1;
             h1{
                 font: 18px/48px "微软雅黑";
                 width: 87px;
@@ -69,9 +69,9 @@ export default {
             }
             .sanjiao{
                 width: 39px;
-                height: 49px;
+                height: 48px;
                 float: left;
-                margin-top: -1px;
+                // margin-top: -1px;
                 background: url(../../../assets/img/sanjiao.png) no-repeat;
             }
             .time{
