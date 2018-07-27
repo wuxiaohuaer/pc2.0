@@ -7,17 +7,17 @@
                 <div class="news-des">
                     <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
                     <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div>
-                        <div class="left">
+                    <div class="last">
+                        <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
                             <span class="news-author">金钱豹</span>
                             <span class="news-time">4小时前</span>
                         </div>
-                        <div class="mid">
+                        <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
                             <span class="news-author">交易所</span>
                         </div>
-                        <div class="right">
+                        <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
                             <span class="news-author">48664</span>
                         </div>
@@ -29,17 +29,17 @@
                 <div class="news-des">
                     <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
                     <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div>
-                        <div class="left">
+                    <div class="last">
+                        <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
                             <span class="news-author">金钱豹</span>
                             <span class="news-time">4小时前</span>
                         </div>
-                        <div class="mid">
+                        <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
                             <span class="news-author">交易所</span>
                         </div>
-                        <div class="right">
+                        <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
                             <span class="news-author">48664</span>
                         </div>
@@ -51,17 +51,17 @@
                 <div class="news-des">
                     <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
                     <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div>
-                        <div class="left">
+                    <div class="last">
+                        <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
                             <span class="news-author">金钱豹</span>
                             <span class="news-time">4小时前</span>
                         </div>
-                        <div class="mid">
+                        <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
                             <span class="news-author">交易所</span>
                         </div>
-                        <div class="right">
+                        <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
                             <span class="news-author">48664</span>
                         </div>
@@ -73,17 +73,17 @@
                 <div class="news-des">
                     <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
                     <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div>
-                        <div class="left">
+                    <div class="last">
+                        <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
                             <span class="news-author">金钱豹</span>
                             <span class="news-time">4小时前</span>
                         </div>
-                        <div class="mid">
+                        <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
                             <span class="news-author">交易所</span>
                         </div>
-                        <div class="right">
+                        <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
                             <span class="news-author">48664</span>
                         </div>
@@ -129,11 +129,11 @@ export default {
                     font: 18px/22px "微软雅黑";
                     margin-bottom:15px;
                 }
-                div{
+                .last{
                     height: 22px;
                     font:14px/22px "微软雅黑";
                     padding-left:4px;
-                    .left{
+                    .news-left{
                         float: left;
                         .news-logo{
                             margin-right: 10px;
@@ -145,13 +145,13 @@ export default {
                             margin-right: 30px;
                         }
                     } 
-                    .mid{
+                    .news-mid{
                         float: left;
                         .news-logo{
                             margin-right: 10px;
                         }
                     } 
-                    .right{
+                    .news-right{
                         float: right;
                         .news-logo{
                             margin-right: 10px;

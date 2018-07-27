@@ -10,6 +10,9 @@
                 </div>
                 <div class="right">
                     <index-person></index-person>
+                    <index-kuai></index-kuai>
+                    <index-rank></index-rank>
+                    <index-hot></index-hot>
                 </div>
             </div>
         </div>
@@ -21,6 +24,9 @@ import IndexSwiper from '../index/computed/swiper'
 import IndexHq from '../index/computed/hq'
 import IndexNews from '../index/computed/news'
 import IndexPerson from '../index/computed/person'
+import IndexKuai from '../index/computed/kuaixun'
+import IndexRank from '../index/computed/rank'
+import IndexHot from '../index/computed/hot'
 export default {
   name: 'Index',
   components:{
@@ -28,7 +34,10 @@ export default {
       IndexSwiper,
       IndexHq,
       IndexNews,
-      IndexPerson
+      IndexPerson,
+      IndexKuai,
+      IndexRank,
+      IndexHot
   }
 }
 </script>
@@ -41,7 +50,7 @@ export default {
         .content{
             width: 1200px;
             margin: 0 auto;
-            height: 2100px;
+            height: 2300px;
             .left{
                 width: 840px;
                 margin-right: 10px;
