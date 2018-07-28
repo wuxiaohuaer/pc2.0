@@ -6,6 +6,12 @@ import './registerServiceWorker'
 import './assets/css/iconfont.css'
 import './assets/css/reset.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import  VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor)
 require('swiper/dist/css/swiper.css')
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
