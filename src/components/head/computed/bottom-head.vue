@@ -3,20 +3,20 @@
         <div class="hdhead">
             <img class="imgs" src="../../../assets/img/logo.png">
             <ul class="nav">
-                <li class="nav-li">首页</li>
-                <li class="nav-li">快讯</li>
-                <li class="nav-li">区块链</li>
-                <li class="nav-li">资本</li>
-                <li class="nav-li">教程</li>
-                <li class="nav-li">挖矿</li>
-                <li class="nav-li">专栏</li>
-                <li class="nav-li">行情</li>
+                <router-link tag="li" class="nav-li" to="/">首页</router-link>
+                <router-link tag="li" class="nav-li" to="/falsh">快讯</router-link>
+                <router-link tag="li" class="nav-li" to="">区块链</router-link>
+                <router-link tag="li" class="nav-li" to="">资本</router-link>
+                <router-link tag="li" class="nav-li" to="">教程</router-link>
+                <router-link tag="li" class="nav-li" to="">挖矿</router-link>
+                <router-link tag="li" class="nav-li" to="">专栏</router-link>
+                <router-link tag="li" class="nav-li" to="">行情</router-link>
             </ul>
             <div class="srach">
                 <input class="srach-txt" type="text">
                 <span class="iconfont">&#xe632;</span>
             </div>
-            <div class="login">登录</div>
+            <router-link tag="div" class="login" to="center">登录</router-link>
         </div>
     </div>
 </template>
@@ -38,6 +38,9 @@ export default {
             height: 76px;
             float: left;
             margin-right: 156px;
+            .nav-li:hover{
+                cursor: pointer;
+            }
             .nav-li{
                 font: 16px/76px "宋体";
                 float: left;
@@ -64,6 +67,9 @@ export default {
                 margin-left: 5px;
             }
         }
+        .login:hover{
+                cursor: pointer;
+            }
         .login{
             width: 76px;
             height: 34px;
