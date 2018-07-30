@@ -1,20 +1,22 @@
 <template>
     <div>
         <div class="hdhead">
-            <img class="imgs" src="../../../assets/img/logo.png">
+            <router-link to="/">
+                <img class="imgs" src="../../../assets/img/logo.png">
+            </router-link>
             <ul class="nav">
                 <router-link tag="li" class="nav-li" to="/">首页</router-link>
                 <router-link tag="li" class="nav-li" to="/falsh">快讯</router-link>
-                <router-link tag="li" class="nav-li" to="">区块链</router-link>
-                <router-link tag="li" class="nav-li" to="">资本</router-link>
-                <router-link tag="li" class="nav-li" to="">教程</router-link>
-                <router-link tag="li" class="nav-li" to="">挖矿</router-link>
-                <router-link tag="li" class="nav-li" to="">专栏</router-link>
-                <router-link tag="li" class="nav-li" to="">行情</router-link>
+                <router-link tag="li" class="nav-li" to="/qukuailian">区块链</router-link>
+                <router-link tag="li" class="nav-li" to="/ziben">资本</router-link>
+                <router-link tag="li" class="nav-li" to="/jiaocheng">教程</router-link>
+                <router-link tag="li" class="nav-li" to="/wakuang">挖矿</router-link>
+                <router-link tag="li" class="nav-li" to="/zhuanlan">专栏</router-link>
+                <router-link tag="li" class="nav-li" to="/hangqing">行情</router-link>
             </ul>
             <div class="srach">
                 <input class="srach-txt" type="text">
-                <span class="iconfont">&#xe632;</span>
+                <span  class="iconfont">&#xe632;</span>
             </div>
             <router-link tag="div" class="login" to="center">登录</router-link>
         </div>
@@ -22,7 +24,9 @@
 </template>
 <script>
 export default {
-  name: 'BottomHead'
+  name: 'BottomHead',
+  methods:{
+  }
 }
 </script>
 <style  lang="less">

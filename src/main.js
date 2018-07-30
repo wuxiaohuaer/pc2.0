@@ -10,6 +10,9 @@ import  VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+import VueI18n from 'vue-i18n'
+
+Vue.use(VueI18n)
 
 Vue.use(VueQuillEditor)
 require('swiper/dist/css/swiper.css')

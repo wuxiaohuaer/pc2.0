@@ -9,13 +9,13 @@
                     <router-link to="/con">内容管理</router-link>
                 </li>
                 <li>
-                    <router-link to="/">资产管理</router-link>
+                    <router-link to="/extend">资产管理</router-link>
                 </li>
                 <li>
-                    <router-link to="/">账号信息</router-link>
+                    <router-link to="/account">账号信息</router-link>
                 </li>
                 <li>
-                    <router-link to="/">推广市场</router-link>
+                    <router-link to="/market">推广市场</router-link>
                 </li>
             </ul>
         </div>

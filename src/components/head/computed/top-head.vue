@@ -4,8 +4,21 @@
             <div class="top-index">
                 <div class="top-left">
                     <span class="iconfont lang">&#xe654;</span>
-                    <span class="desfont">中文</span>
-                    <span class="iconfont xia">&#xe62d;</span>
+                    <!-- <select  class="desfont">
+                        <option>中文</option>
+                        <option>英文</option>
+                    </select> -->
+                    <!-- <select>
+                        <option value="中文">中文</option>
+                        <option value="英文">英文</option>
+                        <option value="日语">日语</option>
+                    </select> -->
+                    <div class="lange">
+                        <span class="desfont">中文</span>
+                        <span class="desfont">英文</span>
+                        <span class="desfont">日语</span>
+                    </div>
+                    <span class="iconfont xia"  @click="handclick">&#xe62d;</span>
                 </div>
                 <div class="top-ipone">
                     <span class="iconfont ipone">&#xe608;</span>
@@ -23,7 +36,12 @@
 </template>
 <script>
 export default {
-  name: 'TopHead'
+  name: 'TopHead',
+  methods:{
+      handclick(){
+
+      }
+  }
 }
 </script>
 <style  lang="less">
@@ -40,17 +58,21 @@ export default {
                 margin-right: 33px;
                 margin-left: 5px;
                 color: #b9bcc3;
-                .desfont{
-                    font-size: 12px;
-                    margin-right: 4px;
-                    font: 12px/30px "微软雅黑";
-                    float: left;
-                }
                 .lang{
                     margin-right: 4px;
                     font-size: 14px;
                     font: 12px/30px "微软雅黑";
                     float: left;
+                }
+                .lange{
+                    width: 28px;
+                    float: left;
+                    overflow: hidden;
+                    .desfont{
+                        font-size: 12px;
+                        margin-right: 4px;
+                        font: 12px/30px "微软雅黑";
+                    }
                 }
                 .xia{
                     font-size: 14px;

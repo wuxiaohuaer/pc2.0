@@ -16,7 +16,7 @@
                 <span class="hd-desc">BTC</span>
                 <img src="../../../assets/img/svg.png" alt="">
             </div>
-            <div class="hd-right">更多</div>
+            <router-link class="hd-right" to="/hangqing">更多</router-link>
         </header>
         <!-- 行情展示 -->
         <div class="hq-title">
@@ -57,7 +57,8 @@ export default {
         box-sizing: border-box;
         background: #ffffff;
         margin-top: 20px;
-        padding: 0 28px 12px 30px;
+        overflow: hidden;
+        padding: 0 28px 20px 30px;
         margin-bottom:11px; 
         position: relative;
         color: #aeaeae;
@@ -96,6 +97,7 @@ export default {
             }
             .hd-right{
                 float: right;
+                color: #aeaeae;
                 font:12px/70px "微软雅黑";
             }
         }
