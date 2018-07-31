@@ -5,7 +5,7 @@
                 <img class="imgs" src="../../../assets/img/logo.png">
             </router-link>
             <ul class="nav">
-                <router-link tag="li" class="nav-li" to="/">首页</router-link>
+                <router-link tag="li" class="nav-li" to="/">{{$t("home")}}</router-link>
                 <router-link tag="li" class="nav-li" to="/falsh">快讯</router-link>
                 <router-link tag="li" class="nav-li" to="/qukuailian">区块链</router-link>
                 <router-link tag="li" class="nav-li" to="/ziben">资本</router-link>

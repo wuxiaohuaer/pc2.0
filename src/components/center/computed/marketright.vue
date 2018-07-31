@@ -1,7 +1,7 @@
 <template>
     <div class="market-right">
         <div class="market-top">
-            <div class="top-title">推广设置</div>
+            <div class="top-title">{{$t("message.title")}}</div>
             <div class="top-con">
                 <div class="reward">
                     <span class="des">总奖励</span>
@@ -54,6 +54,7 @@
 
 export default {
   name: 'ExtentsionRight',
+  data () { return { locale: 'en' } },
   components:{
   }
 }

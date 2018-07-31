@@ -8,17 +8,16 @@
                         <option>中文</option>
                         <option>英文</option>
                     </select> -->
-                    <!-- <select>
-                        <option value="中文">中文</option>
-                        <option value="英文">英文</option>
-                        <option value="日语">日语</option>
-                    </select> -->
-                    <div class="lange">
-                        <span class="desfont">中文</span>
-                        <span class="desfont">英文</span>
-                        <span class="desfont">日语</span>
-                    </div>
-                    <span class="iconfont xia"  @click="handclick">&#xe62d;</span>
+                    <select class="lange" @change="handchange($event)">
+                        <option class="desfont" v-for="index,value in langu" :value="value" :key="value">{{index}}</option>
+                    </select>
+                    <!-- <div class="deslange" v-show="onoff" @click="handclick">中文</div>
+                    <div class="lange" v-show="!onoff">
+                        <div class="desfont">中文</div>
+                        <div class="desfont">中文</div>
+                        <div class="desfont">中文</div>
+                    </div> -->
+                    <span class="iconfont xia">&#xe62d;</span>
                 </div>
                 <div class="top-ipone">
                     <span class="iconfont ipone">&#xe608;</span>
@@ -37,9 +36,30 @@
 <script>
 export default {
   name: 'TopHead',
-  methods:{
-      handclick(){
+  data(){
+      return{
+          langu:{
+                zh:"中文",
+                en:"英文",
+                ru:"俄语",
+                ko:"韩语",
+                ja:"日语"
 
+          }
+      }
+  },
+  methods:{
+      handchange(event){
+        let lang = event.target.value
+        this.$i18n.locale = lang
+        window.localStorage.setItem('language', event.target.value)
+        window.localStorage.setItem('lang', this.langu[event.target.value])
+      }
+  },
+  computed:{
+      language(){
+          let lan = window.localStorage.getItem('lang')
+          return lan
       }
   }
 }
@@ -58,23 +78,25 @@ export default {
                 margin-right: 33px;
                 margin-left: 5px;
                 color: #b9bcc3;
+                .lange{
+                    background: transparent;
+                    width: 40px;
+                    font-size: 16px;
+                    float: left;
+                    color: #b9bcc3;
+                    text-align: center;
+                    font: 14px/30px "微软雅黑";
+                    -webkit-appearance: none; /*for chrome*/
+                }
                 .lang{
                     margin-right: 4px;
+                    
                     font-size: 14px;
                     font: 12px/30px "微软雅黑";
                     float: left;
                 }
-                .lange{
-                    width: 28px;
-                    float: left;
-                    overflow: hidden;
-                    .desfont{
-                        font-size: 12px;
-                        margin-right: 4px;
-                        font: 12px/30px "微软雅黑";
-                    }
-                }
                 .xia{
+                    margin-left: -5px;
                     font-size: 14px;
                     font: 12px/30px "微软雅黑";
                     float: left;
