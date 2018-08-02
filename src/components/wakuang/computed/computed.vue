@@ -1,8 +1,8 @@
 <template>
     <div class="qukuailian">
         <div class="des">
-            <div class="title">区块链技术</div>
-            <div class="des-font">区块链曾默默无闻的作为加密货币的底层技术，如今区块链已经从幕后走到台前，在众多的应用场景中绽放出前所未有的生机与活力</div>
+            <div class="title">{{$t("block_chain_technology")}}</div>
+            <div class="des-font">{{$t("block_chain_description")}}</div>
         </div>
         <div class="index-news">
             <div class="news-one">

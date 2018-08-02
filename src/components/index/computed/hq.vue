@@ -3,7 +3,7 @@
         <!-- 行情头 -->
         <header class="head">
             <span class="post"></span>
-            <h3 class="title">行情</h3>
+            <h3 class="title">{{$t("quotation")}}</h3>
             <div class="hd-zhan">
                 <span class="hd-desc">BTC</span>
                 <img src="../../../assets/img/svg.png" alt="">
@@ -16,7 +16,7 @@
                 <span class="hd-desc">BTC</span>
                 <img src="../../../assets/img/svg.png" alt="">
             </div>
-            <router-link class="hd-right" to="/hangqing">更多</router-link>
+            <router-link class="hd-right" to="/hangqing">{{$t("load_more")}}</router-link>
         </header>
         <!-- 行情展示 -->
         <div class="hq-title">

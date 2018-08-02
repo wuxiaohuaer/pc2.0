@@ -6,19 +6,19 @@
             </router-link>
             <ul class="nav">
                 <router-link tag="li" class="nav-li" to="/">{{$t("home")}}</router-link>
-                <router-link tag="li" class="nav-li" to="/falsh">快讯</router-link>
-                <router-link tag="li" class="nav-li" to="/qukuailian">区块链</router-link>
-                <router-link tag="li" class="nav-li" to="/ziben">资本</router-link>
-                <router-link tag="li" class="nav-li" to="/jiaocheng">教程</router-link>
-                <router-link tag="li" class="nav-li" to="/wakuang">挖矿</router-link>
-                <router-link tag="li" class="nav-li" to="/zhuanlan">专栏</router-link>
-                <router-link tag="li" class="nav-li" to="/hangqing">行情</router-link>
+                <router-link tag="li" class="nav-li" to="/falsh">{{$t("news_flash")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/qukuailian">{{$t("block_chain")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/ziben">{{$t("capital")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/jiaocheng">{{$t("course")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/wakuang">{{$t("mining")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/zhuanlan">{{$t("special_column")}}</router-link>
+                <router-link tag="li" class="nav-li" to="/hangqing">{{$t("quotation")}}</router-link>
             </ul>
             <div class="srach">
                 <input class="srach-txt" type="text">
                 <span  class="iconfont">&#xe632;</span>
             </div>
-            <router-link tag="div" class="login" to="center">登录</router-link>
+            <router-link tag="div" class="login" to="center">{{$t("login")}}</router-link>
         </div>
     </div>
 </template>
@@ -41,14 +41,13 @@ export default {
         .nav{
             height: 76px;
             float: left;
-            margin-right: 156px;
             .nav-li:hover{
                 cursor: pointer;
             }
             .nav-li{
-                font: 16px/76px "宋体";
+                font: 14px/76px "宋体";
                 float: left;
-                padding: 0 20px;
+                padding: 0 15px;
             }
         }
         .srach{

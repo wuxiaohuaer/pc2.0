@@ -1,4 +1,4 @@
-module.exports = {
+export default  {
     home : 'Главная',
     block_chain : 'блок цепи',
     capital : 'капитала',
@@ -9,6 +9,8 @@ module.exports = {
     please_search : 'Пожалуйста, введите поиска контента',
     logout : 'выход',
     login : 'Логин',
+    download:'загрузка',
+    person_spacial_colum:'колонка персонажей',
     register : 'регистрация',
     /*首页*/
     load_more : 'Загрузка больше',

@@ -8,7 +8,7 @@
     </quill-editor>
 </template> 
 <script>
-    import { quillEditor } from 'vue-quill-editor'
+    import { QuillEditor } from 'vue-quill-editor'
     export default{
         data(){
             return {

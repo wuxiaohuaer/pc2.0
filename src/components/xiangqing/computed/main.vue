@@ -13,9 +13,9 @@
                     近日决方案只有通过无线充电底座给设备充电一种方式。由于旗下产品线较多，苹果正尝试让设备间可以进行无线充电，以摆脱单一的充电形式。
                 </div>
                 <div class="word-write">
-                    <span class="first">本文来源：金钱报</span>
+                    <span class="first">{{$t("source")}}：{{$t("money_newspaper")}}</span>
                     <span class="two">
-                        本文作者：<span>金钱报</span>
+                        {{$t("author")}}：<span>{{$t("money_newspaper")}}</span>
                     </span>
                 </div>
             </div>

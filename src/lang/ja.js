@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     home : 'ホーム',
     block_chain : 'ブロックチェーン',
     capital : '資本',
@@ -9,6 +9,8 @@ module.exports = {
     please_search : '検索内容を入力して下さい',
     logout : 'ログイン',
     login : '登録',
+    download:'ダウンロード',
+    person_spacial_colum:'人物コラム',
     register : '登録',
     /*首页*/
     load_more : 'アドイン',

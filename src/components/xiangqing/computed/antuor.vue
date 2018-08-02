@@ -6,8 +6,8 @@
                 <img class="antuor-logo" src="../../../assets/img/logo5.png" alt="">
                 <div class="antuor-des">
                     <p class="des-title">金钱报</p>
-                    <p class="des-des">文章总数：54564564</p>
-                    <p class="des-des">浏览量：656545</p>
+                    <p class="des-des">{{$t("article_num")}}：54564564</p>
+                    <p class="des-des">{{$t("article_views")}}：656545</p>
                 </div>
             </div>
         </div>

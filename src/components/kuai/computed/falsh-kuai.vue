@@ -2,7 +2,7 @@
     <div>
         <div class="falsh-kuai">
             <div class="falsh-title">
-                <h1>快讯</h1>
+                <h1>{{$t("news_flash")}}</h1>
                 <span class="sanjiao"></span>
                 <div class="time">
                     <span class="week">星期日</span>
@@ -19,7 +19,7 @@
                         <div class="bottom">
                             <p class="sharing">
                                 <span class="iconfont">&#xe6e7;</span>
-                                全文分享
+                               {{$t("news_flash")}}
                             </p>
                         </div>
                         <img class="logo" src="../../../assets/img/dian.png">
@@ -30,7 +30,7 @@
                         <div class="bottom">
                             <p class="sharing">
                                 <span class="iconfont">&#xe6e7;</span>
-                                全文分享
+                                {{$t("news_flash")}}
                             </p>
                         </div>
                         <img class="logo" src="../../../assets/img/dian.png">
@@ -41,7 +41,7 @@
                         <div class="bottom">
                             <p class="sharing">
                                 <span class="iconfont">&#xe6e7;</span>
-                                全文分享
+                               {{$t("news_flash")}}
                             </p>
                         </div>
                         <img class="logo" src="../../../assets/img/dian.png">
@@ -52,7 +52,7 @@
                         <div class="bottom">
                             <p class="sharing">
                                 <span class="iconfont">&#xe6e7;</span>
-                                全文分享
+                               {{$t("news_flash")}}
                             </p>
                         </div>
                         <img class="logo" src="../../../assets/img/dian.png">

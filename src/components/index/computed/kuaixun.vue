@@ -2,7 +2,7 @@
     <div>
         <div class="kuai">
             <div class="kuai-title">
-                <h1>快讯</h1>
+                <h1>{{$t("news_flash")}}</h1>
                 <span class="sanjiao"></span>
                 <div class="time">
                     <span class="today">今天 ·</span>

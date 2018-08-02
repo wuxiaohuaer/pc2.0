@@ -4,7 +4,7 @@
         <img src="../../../assets/img/img3.png" alt="">
         <div class="person">
             <div class="person-title">
-                <h1>人物专栏</h1>
+                <h1>{{$t("person_spacial_colum")}}</h1>
                 <span class="iconfont">&#xe6e7;</span>
             </div>
             <swiper>

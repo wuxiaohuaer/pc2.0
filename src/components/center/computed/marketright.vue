@@ -1,32 +1,32 @@
 <template>
     <div class="market-right">
         <div class="market-top">
-            <div class="top-title">{{$t("message.title")}}</div>
+            <div class="top-title">{{$t("extension_setting")}}</div>
             <div class="top-con">
                 <div class="reward">
-                    <span class="des">总奖励</span>
+                    <span class="des">{{$t("general_award")}}</span>
                     <input type="number" value="45445">
                 </div>
                 <div class="reward">
-                    <span class="des">单次点击</span>
+                    <span class="des">{{$t("single_award")}}</span>
                     <input type="number" value="45445">
                 </div>
                 <div class="reward">
-                    <span class="des">单次点击上限</span>
+                    <span class="des">{{$t("one_single_award")}}</span>
                     <input type="number" value="45445">
                 </div>
-                <div class="btn">提交</div>
+                <div class="btn">{{$t("extension_setting")}}</div>
             </div>
         </div>
         <div class="market-bottom">
-            <div class="top-title">推广明细</div>
-            <div class="num">推广阅读：15151    总发放：1212MB</div>
+            <div class="top-title">{{$t("popularize_the_detail")}}</div>
+            <div class="num">{{$t("popularizing_reading")}}15151   {{$t("popularizing_reading")}}151</div>
             <table class="table">
                 <thead class="thead">
                     <tr>
-                        <th class="time">手机号</th>
-                        <th class="beizhu">阅读数</th>
-                        <th class="des">消耗MB数</th>
+                        <th class="time">{{$t("phone_number")}}</th>
+                        <th class="beizhu">{{$t("reading")}}</th>
+                        <th class="des">{{$t("consume")}}MB</th>
                     </tr>
                 </thead>
                 <tbody class="tbody">
@@ -86,7 +86,7 @@ export default {
                 .reward{
                     height: 22px;
                     float: left;
-                    margin-right: 90px;
+                    margin-right: 70px;
                     .des{
                         float: left;
                         font: 14px/22px "微软雅黑";

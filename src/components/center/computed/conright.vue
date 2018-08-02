@@ -4,7 +4,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>
@@ -12,7 +12,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>
@@ -20,7 +20,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>
@@ -28,7 +28,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>
@@ -36,7 +36,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>
@@ -44,7 +44,7 @@
             <div class="lis-left">
                 <div class="title">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
                 <div class="des">什么是区块链真相？这个视频可能比李笑来的音频更震撼</div>
-                <div class="btn">推荐此文</div>
+                <div class="btn">{{$t("recommend_this_article")}}</div>
             </div>
             <img src="../../../assets/img/pic11.png" alt="">
         </router-link>

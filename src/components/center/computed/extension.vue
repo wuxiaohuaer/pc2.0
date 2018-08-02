@@ -1,28 +1,28 @@
 <template>
     <div class="extentsion-right">
         <div class="integral">
-            <div class="title">积分</div>
+            <div class="title">{{$t("integral")}}</div>
             <div class="mid">
-                <span class="yue color2">余额</span>
+                <span class="yue color2">{{$t("balance")}}</span>
                 <span class="yue-num color1">125156565</span>
                 <span class="yue-mb color2">MB</span>
-                <span class="dong color2">冻结</span>
+                <span class="dong color2">{{$t("frozen")}}</span>
                 <span class="dong-num color1">125156565</span>
                 <span class="dong-mb color2">MB</span>
             </div>
             <div class="btn">
-                <span class="btn1">提现</span>
-                <span class="btn2">充值</span>
+                <span class="btn1">{{$t("withdrawals")}}</span>
+                <span class="btn2">{{$t("recharge")}}</span>
             </div>
         </div>
         <div class="extend-tab">
-            <div class="tab-title">MB明细</div>
+            <div class="tab-title">MB{{$t("detailed")}}</div>
             <table class="table">
                 <thead class="thead">
                     <tr>
-                        <th class="time">时间</th>
-                        <th class="beizhu">备注</th>
-                        <th class="des">明细</th>
+                        <th class="time">{{$t("time")}}</th>
+                        <th class="beizhu">{{$t("amount")}}</th>
+                        <th class="des">{{$t("detailed")}}</th>
                     </tr>
                 </thead>
                 <tbody class="tbody">

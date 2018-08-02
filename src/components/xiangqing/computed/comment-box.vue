@@ -2,7 +2,7 @@
     <div>
         <div class="xq-commetbox">
             <div class="statment">
-                声明：近日决方案只有通过无线充电底座给设备充电一种方式。由于旗下产品线较多，苹果正尝试让设备间可以进行无线充电，以摆脱单一的充电形式。
+                {{$t("statement")}}
             </div>
             <div class="commentbox">
                 <div class="box-left">
@@ -10,10 +10,10 @@
                     <span class="des">四大天王</span>
                 </div>
                 <div class="box-mid">
-                    <textarea placeholder="请输入要评论的内容"></textarea>
+                    <textarea :placeholder="$t('enter_the_comment_content')"></textarea>
                     <span class="iconfont">&#xe654;</span>
                 </div>
-                <div class="box-right">提交</div>
+                <div class="box-right">{{$t("submit")}}</div>
             </div>
         </div>
     </div>

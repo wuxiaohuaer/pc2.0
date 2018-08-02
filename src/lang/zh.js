@@ -1,17 +1,19 @@
-module.exports = {
+export default {
     home : '首页',
     block_chain : '区块链',
     capital : '资本',
     interview : '专访',
     course : '教程',
     mining : '挖矿',
+    person_spacial_colum:'人物专栏',
     special_column : '专栏',
     please_search : '请输入搜索内容',
     logout : '退出登录',
     login : '登录',
+    download:'下载',
     register : '注册',
     /*首页*/
-    load_more : '加载更多',
+    load_more : '更多',
     /*新闻*/
     news_rankings : '新闻排行',
     hot_news : '热门新闻',
@@ -22,7 +24,7 @@ module.exports = {
     submit_comments : '提交评论',
     piece : '篇',
     article_num : '文章总数',
-    article_views : '文章总浏览数',
+    article_views : '浏览数',
     block_chain_technology : '区块链技术',
     block_chain_description : '区块链曾默默无闻的作为加密货币的底层技术，如今区块链已经从幕后走到台前，在众多的应用场景中绽放出前所未有的生机与活力',
     reply : '回复',

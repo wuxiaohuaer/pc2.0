@@ -1,25 +1,37 @@
 <template>
     <div class="account-right">
         <div class="account-name">
-            <span class="title">昵称</span>
-            <input type="text" placeholder="请输入你的昵称">
+            <span class="title">{{$t("nickname")}}</span>
+            <input type="text" :placeholder="$t('please_enter_the_nickname')">
         </div>
         <div class="account-des">
-            <span class="title">介绍</span>
-            <input type="text" placeholder="一段话进行简单的介绍">
+            <span class="title">{{$t("introduce")}}</span>
+            <input type="text" :placeholder="$t('please_enter_the_signature')">
         </div>
         <div class="account-logo">
-            <span class="title">头像</span>
+            <span class="title">{{$t("head_portrait")}}</span>
             <div class="text">+</div>
         </div>
-        <div class="btn">修改</div>
+        <div class="btn">{{$t("modify")}}</div>
     </div>
 </template>
 <script>
 
 export default {
   name: 'AccountRight',
+  data(){
+      return {
+          
+      }
+  },
   components:{
+  },
+  computed:{
+      holder(){
+          return {
+              
+          }
+      }
   }
 }
 </script>

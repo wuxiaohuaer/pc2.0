@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import zh from '../lang/zh.js'
+import en from '../lang/en.js'
+import ko from '../lang/ko'
+import ja from '../lang/ja'
+import ru from '../lang/ru'
 // import Cookies from 'js-cookie'
 
 Vue.use(VueI18n)
@@ -47,11 +52,11 @@ window.lang = lang()
 const i18n = new VueI18n({
   locale: language, // set locale
   messages: {
-    'zh': require('./zh'),
-    'en': require('./en'),
-    'ko': require('./ko'),
-    'ru': require('./ru'),
-    'ja': require('./ja')
+    'zh': zh,
+    'en': en,
+    'ko': ko,
+    'ru': ru,
+    'ja': ja
   } // set locale messages
 })
 export default i18n

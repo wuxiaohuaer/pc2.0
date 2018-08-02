@@ -2,7 +2,7 @@
     <div>
         <div class="hot">
             <div class="hot-title">
-                <h1>实时热门</h1>
+                <h1>{{$t("hot_news")}}</h1>
                 <span class="iconfont">&#xe6e7;</span>
             </div>
             <div class="hot-con">

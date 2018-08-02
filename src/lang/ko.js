@@ -1,4 +1,4 @@
-module.exports = {
+export default  {
     home : '홈',
     block_chain : '블록 체인',
     capital : '자본',
@@ -10,6 +10,8 @@ module.exports = {
     logout : '종료 로그인',
     login : '로그인',
     register : '등록',
+    download:'다운로드',
+    person_spacial_colum:'인물 칼럼.',
     /*首页*/
     load_more : '더 로드',
     /*新闻*/

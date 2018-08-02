@@ -1,30 +1,30 @@
 <template>
     <div>
         <div class="center-write">
-            <input  type="text" class="text-title" placeholder="请输入标题，1至60个字。">
+            <input  type="text" class="text-title" :placeholder="$t('title_article')">
             <quill-editor></quill-editor>
             <div class="write-tag">
-                <span class="tag-title">TAG标签</span>
+                <span class="tag-title">{{$t("tag")}}</span>
                 <input type="text" name="" id="">
                 <span class="tag-add">+</span>
-                <span class="tag-des">至少三个tag，每个tag2-5个汉字</span>
+                <span class="tag-des">{{$t("tag_describe")}}</span>
             </div>
             <div class="write-abs">
-                <span class="tag-title">内容摘要</span>
-                <textarea type="text"  placeholder="一句话描述文章内容，突出核心观点。文字数量在30-60字之间。" name=""></textarea>
+                <span class="tag-title">{{$t("content_summary")}}</span>
+                <textarea type="text"  :placeholder="$t('content_summary_describe')" name=""></textarea>
             </div>
             <div class="write-ups">
-                <span class="tag-title">上传封面</span>
+                <span class="tag-title">{{$t("upload_the_cover")}}</span>
                 <div class="ups-kuang">+</div>
             </div>
             <div class="write-statement">
-                <span class="tag-title">权利声明</span>
-                <div class="statement-txt">考虑到用户浏览体验，所有投稿到金钱报的稿件，金钱报均有权对文章的标题，头图进行调整，这些调整并不会应向正文内容，如果需要进行内容调整，编辑会与作者进行联系，不会直接修改。</div>
+                <span class="tag-title">{{$t("copyright_declarations")}}</span>
+                <div class="statement-txt">{{$t("copyright_declaration")}}</div>
             </div>
             <div class="write-btn">
-                <span class="bule">提交</span>
-                <span class="one">存稿<span></span></span>
-                <span class="two">预览<span></span></span>
+                <span class="bule">{{$t("publish")}}</span>
+                <span class="one">{{$t("deposit_draft")}}<span></span></span>
+                <span class="two">{{$t("preview")}}<span></span></span>
             </div>
         </div>
     </div>
@@ -148,7 +148,6 @@ export default {
                 border-radius: 5px;
             }
             .one{
-                width: 60px;
                 height: 100%;
                 float: left;
                 color: #89969f;
@@ -166,7 +165,6 @@ export default {
                 }
             }
             .two{
-                width: 60px;
                 height: 100%;
                 float: left;
                 color: #89969f;

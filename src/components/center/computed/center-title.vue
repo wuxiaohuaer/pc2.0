@@ -3,19 +3,19 @@
         <div class="center-title">
             <ul class="center-ul">
                 <li>
-                    <router-link to="/center">写文章</router-link>
+                    <router-link to="/center">{{$t("write_article")}}</router-link>
                 </li>
                 <li>
-                    <router-link to="/con">内容管理</router-link>
+                    <router-link to="/con">{{$t("content_management")}}</router-link>
                 </li>
                 <li>
-                    <router-link to="/extend">资产管理</router-link>
+                    <router-link to="/extend">{{$t("asset_management")}}</router-link>
                 </li>
                 <li>
-                    <router-link to="/account">账号信息</router-link>
+                    <router-link to="/account">{{$t("account_information")}}</router-link>
                 </li>
                 <li>
-                    <router-link to="/market">推广市场</router-link>
+                    <router-link to="/market">{{$t("promote_the_market")}}</router-link>
                 </li>
             </ul>
         </div>

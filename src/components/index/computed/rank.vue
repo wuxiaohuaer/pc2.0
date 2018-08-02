@@ -2,7 +2,7 @@
     <div>
         <div class="rank">
             <div class="rank-title">
-                <h1>新闻排行</h1>
+                <h1>{{$t("news_rankings")}}</h1>
                 <span class="iconfont">&#xe6e7;</span>
             </div>
             <div class="rank-con">

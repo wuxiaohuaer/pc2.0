@@ -14,5 +14,6 @@ module.exports = {
             .set('common', resolve('src/common'))
             .set('base', resolve('src/base'))
             .set('static', resolve('src/static'))
-    }
+    },
+    
 }
