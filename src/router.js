@@ -15,6 +15,8 @@ import JiaoCheng from './components/jiaocheng/jiaocheng'
 import WaKuang from './components/wakuang/wakuang'
 import ZiBen from './components/ziben/ziben'
 import ZhuanLan from './components/zhuanlan/zhuanlan'
+import Login from './components/login/login.vue'
+import Register from './components/login/register.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -93,6 +95,16 @@ export default new Router({
       path: '/zhuanlan',
       name: 'ZhuanLan',
       component: ZhuanLan
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

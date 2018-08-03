@@ -70,26 +70,6 @@
                 <span class="name two">+12.5%</span>
                 <img src="../../../assets/img/svg2.png" alt="">
             </div>
-            <div class="hq-con-row">
-                <img src="../../../assets/img/logo2.png" alt="">
-                <span class="name one">HuaHua</span>
-                <span class="name two">￥66664</span>
-                <span class="name three">+12.5%</span>
-                <span class="name three">￥66664</span>
-                <span class="name three">￥66664</span>
-                <span class="name two">+12.5%</span>
-                <img src="../../../assets/img/svg2.png" alt="">
-            </div>
-            <div class="hq-con-row">
-                <img src="../../../assets/img/logo2.png" alt="">
-                <span class="name one">HuaHua</span>
-                <span class="name two">￥66664</span>
-                <span class="name three">+12.5%</span>
-                <span class="name three">￥66664</span>
-                <span class="name three">￥66664</span>
-                <span class="name two">+12.5%</span>
-                <img src="../../../assets/img/svg2.png" alt="">
-            </div>
         </div>
     </div>
 </template>
@@ -123,9 +103,11 @@ export default {
             .hq-con-row{
                 height: 38px;
                 img{
+                    float: left;
                     margin: 0px 10px 0 13px;
                 }
                 .name{
+                    float: left;
                     font:12px/38px "微软雅黑";
                 }
                 .one{
@@ -137,6 +119,37 @@ export default {
                 .three{
                     margin-right: 70px;
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .hq-con-des {
+            width: 640px;
+            padding: 0;
+            .hq-con-name {
+                padding:0 10px;
+            }
+        }
+        #app .hq-con-row{
+            width: 640px;
+            .one, .two,.three {
+                margin-right: 30px;
+            }
+        }
+        
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+         #app .hq-con-des {
+            width: 740px;
+            padding: 0;
+            .hq-con-name {
+                padding:0 17px;
+            }
+        }
+        #app .hq-con-row{
+            width: 740px;
+            .one, .two,.three {
+                margin-right: 45px;
             }
         }
     }

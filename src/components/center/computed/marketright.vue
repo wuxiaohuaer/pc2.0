@@ -3,17 +3,19 @@
         <div class="market-top">
             <div class="top-title">{{$t("extension_setting")}}</div>
             <div class="top-con">
-                <div class="reward">
-                    <span class="des">{{$t("general_award")}}</span>
-                    <input type="number" value="45445">
-                </div>
-                <div class="reward">
-                    <span class="des">{{$t("single_award")}}</span>
-                    <input type="number" value="45445">
-                </div>
-                <div class="reward">
-                    <span class="des">{{$t("one_single_award")}}</span>
-                    <input type="number" value="45445">
+                <div class="top-hd" ref="reward">
+                    <div class="reward">
+                        <span class="des" ref="reward1">{{$t("general_award")}}</span>
+                        <input type="number" value="45445">
+                    </div>
+                    <div class="reward">
+                        <span class="des" ref="reward2">{{$t("single_award")}}</span>
+                        <input type="number" value="45445">
+                    </div>
+                    <div class="reward">
+                        <span class="des" ref="reward3">{{$t("one_single_award")}}</span>
+                        <input type="number" value="45445">
+                    </div>
                 </div>
                 <div class="btn">{{$t("extension_setting")}}</div>
             </div>
@@ -56,6 +58,47 @@ export default {
   name: 'ExtentsionRight',
   data () { return { locale: 'en' } },
   components:{
+  },
+   updated() {
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru' || lang === 'en') {
+          for (let i = 0; i < this.$refs.reward.children.length; i++) {
+              this.$refs.reward1.style.fontSize = '12px'; 
+              this.$refs.reward2.style.fontSize = '12px'; 
+              this.$refs.reward3.style.fontSize = '12px'; 
+          }
+      }else if(lang === 'zh'){
+        this.$refs.reward2.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.fontSize = '14px';
+      }else{
+        this.$refs.reward2.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward1.style.fontSize = '14px'; 
+        this.$refs.reward2.style.fontSize = '14px'; 
+        this.$refs.reward3.style.fontSize = '14px'; 
+      }
+  },
+  mounted (){
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru'|| lang === 'en') {
+        // this.$refs.li.children[i].className = 'lii'
+        for (let i = 0; i < this.$refs.reward.children.length; i++) {
+              this.$refs.reward1.style.fontSize = '12px'; 
+              this.$refs.reward2.style.fontSize = '12px'; 
+              this.$refs.reward3.style.fontSize = '12px'; 
+          }
+      }else if(lang === 'zh'){
+        this.$refs.reward2.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.fontSize = '14px';
+      }else{
+        this.$refs.reward2.style.marginLeft = '80px'; 
+        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward1.style.fontSize = '14px'; 
+        this.$refs.reward2.style.fontSize = '14px'; 
+        this.$refs.reward3.style.fontSize = '14px'; 
+      }
   }
 }
 </script>
@@ -83,30 +126,34 @@ export default {
                 height: 182px;
                 padding-top: 43px;
                 box-sizing: border-box;
-                .reward{
+                .top-hd{
+                    width: 100%;
                     height: 22px;
-                    float: left;
-                    margin-right: 70px;
-                    .des{
+                    .reward{
+                        height: 22px;
                         float: left;
-                        font: 14px/22px "微软雅黑";
-                        margin-right: 10px;
-                        margin-left: 18px;
-                    }
-                    input{
-                        width: 95px;
-                        float: left;
-                        padding-left: 5px;
-                        height: 20px;
-                        border-radius: 3px;
-                        border: 1px solid #c1c3cf;
+                        .des{
+                            float: left;
+                            font: 14px/22px "微软雅黑";
+                            margin-right: 10px;
+                            margin-left: 18px;
+                        }
+                        input{
+                            width: 65px;
+                            float: left;
+                            padding-left: 5px;
+                            height: 20px;
+                            border-radius: 3px;
+                            border: 1px solid #c1c3cf;
+                        }
                     }
                 }
                 .btn{
                     width: 80px;
                     height: 32px;
-                    float: left;
-                    font: 14px/32px "微软雅黑";
+                    float: right;
+                    word-wrap: break-word;
+                    font: 12px/32px "微软雅黑";
                     text-align: center;
                     color: #fff;
                     margin: 47px 0 0 12px;

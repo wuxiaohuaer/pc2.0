@@ -157,7 +157,7 @@ export default  {
     name_username_not_filled : 'Имя пользователя не заполнить',
     username_existed : 'Имя пользователя уже существует',
     /*快讯*/
-    news_flash : 'News',
+    news_flash : 'экспресс',
     /*行情*/
     quotation : 'рынок',
     /*title*/

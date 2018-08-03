@@ -82,7 +82,6 @@ export default {
             margin-bottom: 16px;
             h1{
                 font: 18px/48px "微软雅黑";
-                width: 87px;
                 float: left;
                 text-align: center;
                 color: #fff;
@@ -163,6 +162,22 @@ export default {
                     }
                 }
             }
+        }
+    }
+    @media screen and (max-width: 1210px) {
+        #app .falsh-kuai .time{
+            width: 450px;
+        }
+        #app .falsh-kuai .kuai-con .kuai-right{
+            width: 550px;
+        }
+    }
+     @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .falsh-kuai .time{
+            width: 450px;
+        }
+        #app .falsh-kuai .kuai-con .kuai-right{
+            width: 650px;
         }
     }
 </style>

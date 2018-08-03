@@ -62,4 +62,24 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .wrap .content {
+            width: 950px;
+        }
+        #app .wrap  .content .left {
+            width: 640px;
+        }
+        #app .wrap  .content .right {
+            width: 300px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .wrap  .content {
+            width: 740px;
+        }
+        #app .wrap  .content .left {
+            width: 740px;
+        }
+    }
+
 </style>

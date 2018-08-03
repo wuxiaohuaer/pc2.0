@@ -9,36 +9,6 @@ import ru from '../lang/ru'
 
 Vue.use(VueI18n)
 
-// const messages = {
-//   //英文
-//   en: {
-//     message: {
-//       hello: 'hello',
-//       about: 'about',
-//       welcome: "Welcome"
-//     }
-//   },
-//   //简体中文
-//   zhCHS: {
-//     message: {
-//       hello: '你好',
-//       about: '关于',
-//       welcome: "欢迎"
-//     }
-//   },
-//   //繁体中文
-//   zhCHT: {
-//     message: {
-//       hello: '妳好',
-//       about: '關於',
-//       welcome: "歡迎"
-//     }
-//   }
-// }
-// const messages = {
-//   locale: 'en',  // 语言标识
- 
-// }
 function lang () {
   // 将选择的语言存在localStorage中
     let t = window.localStorage.getItem('language')

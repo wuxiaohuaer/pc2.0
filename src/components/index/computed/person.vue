@@ -1,7 +1,7 @@
 <template>
     <div>
-        <img src="../../../assets/img/img2.png" alt="">
-        <img src="../../../assets/img/img3.png" alt="">
+        <img class="person-pic" src="../../../assets/img/img2.png" alt="">
+        <img class="person-pic" src="../../../assets/img/img3.png" alt="">
         <div class="person">
             <div class="person-title">
                 <h1>{{$t("person_spacial_colum")}}</h1>
@@ -111,5 +111,23 @@ export default {
     }
     .swiper-slide{
         width: 100%;
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-pic {
+            width: 300px;
+            height: 100px;
+        }
+        #app .icon {
+            width: 90px;
+            padding:17px  0;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-pic {
+            display: none;
+        }
+        #app .person {
+            display: none;
+        }
     }
 </style>

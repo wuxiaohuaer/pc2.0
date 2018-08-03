@@ -2,7 +2,7 @@
     <div>
         <div class="kuai">
             <div class="kuai-title">
-                <h1>{{$t("news_flash")}}</h1>
+                <h1 ref="h1">{{$t("news_flash")}}</h1>
                 <span class="sanjiao"></span>
                 <div class="time">
                     <span class="today">今天 ·</span>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="lis1">
                         <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
+                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
                         <img class="logo" src="../../../assets/img/dian.png">
                     </div>
                     <div class="lis1">
@@ -42,6 +42,22 @@
 export default {
   name: 'IndexKuai',
   components:{
+  },
+  updated() {
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'en') {
+        this.$refs.h1.style.fontSize = '14px'
+      }else{
+          this.$refs.h1.style.fontSize = '18px'
+      }
+  },
+  mounted (){
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'en') {
+        this.$refs.h1.style.fontSize = '14px'
+      }else{
+          this.$refs.h1.style.fontSize = '18px'
+      }
   }
 }
 </script>
@@ -59,8 +75,8 @@ export default {
             margin-bottom: 16px;
             // border-bottom: 1px solid #eaeef1;
             h1{
+                width: 88px;
                 font: 18px/48px "微软雅黑";
-                width: 87px;
                 float: left;
                 text-align: center;
                 color: #fff;
@@ -127,6 +143,16 @@ export default {
                     }
                 }
             }
+        }
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .kuai .kuai-right {
+            width: 230px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .kuai {
+            display: none;
         }
     }
 </style>

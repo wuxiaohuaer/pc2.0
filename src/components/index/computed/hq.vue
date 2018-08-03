@@ -122,4 +122,56 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px) and (min-width: 960px)  {
+        #app .hq {
+            width: 640px;
+            padding: 0;
+            .head{
+                 .title{
+                    margin-left: 20px;
+                }
+                .hd-zhan{
+                    margin-left: 5px;
+                }
+            }
+            .hq-title{
+                span{
+                    font: 14px/49px "微软雅黑";
+                }
+                ul{
+                    width: 95%;
+                    li{
+                        font: 12px/49px "微软雅黑";
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .hq {
+            width: 740px;
+            padding: 0;
+            .head{
+                 .title{
+                    margin-left: 20px;
+                }
+                .hd-zhan{
+                    margin-left: 5px;
+                }
+            }
+            .hq-title{
+                span{
+                    font: 14px/49px "微软雅黑";
+                }
+                ul{
+                    width: 95%;
+                    li{
+                        font: 12px/49px "微软雅黑";
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
 </style>

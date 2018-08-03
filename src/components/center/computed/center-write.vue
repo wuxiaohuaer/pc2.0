@@ -7,7 +7,7 @@
                 <span class="tag-title">{{$t("tag")}}</span>
                 <input type="text" name="" id="">
                 <span class="tag-add">+</span>
-                <span class="tag-des">{{$t("tag_describe")}}</span>
+                <span ref="des" class="tag-des">{{$t("tag_describe")}}</span>
             </div>
             <div class="write-abs">
                 <span class="tag-title">{{$t("content_summary")}}</span>
@@ -21,7 +21,7 @@
                 <span class="tag-title">{{$t("copyright_declarations")}}</span>
                 <div class="statement-txt">{{$t("copyright_declaration")}}</div>
             </div>
-            <div class="write-btn">
+            <div class="write-btn" ref="btn">
                 <span class="bule">{{$t("publish")}}</span>
                 <span class="one">{{$t("deposit_draft")}}<span></span></span>
                 <span class="two">{{$t("preview")}}<span></span></span>
@@ -35,6 +35,43 @@ export default {
   name: 'CenterWrite',
   components:{
       QuillEditor
+  },
+  updated() {
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru') {
+        this.$refs.des.style.fontSize = '12px'
+        this.$refs.btn.children[1].style.fontSize = '12px'
+        this.$refs.btn.children[1].style.lineHeight = '18px'
+        this.$refs.btn.children[2].style.fontSize = '12px'
+        this.$refs.btn.children[2].style.lineHeight = '18px'
+      }else if(lang === 'en'){
+        this.$refs.btn.children[1].style.lineHeight = '18px'
+      }else{
+        this.$refs.des.style.fontSize = '14px'
+        this.$refs.btn.children[1].style.fontSize = '18px'
+        this.$refs.btn.children[1].style.lineHeight = '48px'
+        this.$refs.btn.children[2].style.fontSize = '18px'
+        this.$refs.btn.children[2].style.lineHeight = '48px'
+      }
+  },
+  mounted (){
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru') {
+        console.log(this.$refs.des);
+        this.$refs.btn.children[1].style.fontSize = '12px'
+        this.$refs.btn.children[1].style.lineHeight = '18px'
+        this.$refs.btn.children[2].style.fontSize = '12px'
+        this.$refs.btn.children[2].style.lineHeight = '48px'
+        this.$refs.des.style.fontSize = '12px'
+      }else if(lang === 'en'){
+        this.$refs.btn.children[1].style.lineHeight = '18px'
+      }else{
+        this.$refs.des.style.fontSize = '14px'
+        this.$refs.btn.children[1].style.fontSize = '18px'
+        this.$refs.btn.children[1].style.lineHeight = '48px'
+        this.$refs.btn.children[2].style.fontSize = '18px'
+        this.$refs.btn.children[2].style.lineHeight = '48px'
+      }
   }
 }
 </script>
@@ -55,6 +92,7 @@ export default {
             height: 27px;
             margin-bottom: 32px;
             .tag-title{
+                width: 78px;
                 font: 18px/27px "微软雅黑";
                 float: left;
                 margin-right: 28px;
@@ -76,6 +114,7 @@ export default {
                 font: 14px/27px "微软雅黑";
                 float: right;
                 color: red;
+                
             }
         }
         .write-abs{
@@ -83,6 +122,7 @@ export default {
             height: 90px;
             margin-bottom: 43px;
              .tag-title{
+                width: 78px;
                 font: 18px/27px "微软雅黑";
                 float: left;
                 margin-right: 28px;
@@ -101,6 +141,7 @@ export default {
             height: 162px;
             margin-bottom: 43px;
              .tag-title{
+                width: 78px;
                 font: 18px/27px "微软雅黑";
                 float: left;
                 margin-right: 28px;
@@ -117,16 +158,17 @@ export default {
         }
         .write-statement{
             width: 100%;
-            height: 90px;
+            height: 160px;
+            margin-bottom: 20px;
             margin-bottom: 43px;
             .tag-title{
+                width: 78px;
                 font: 18px/27px "微软雅黑";
                 float: left;
                 margin-right: 28px;
             }
             .statement-txt{
                 width: 656px;
-                height: 90px;
                 float: left;
                 font: 14px/34px "微软雅黑";
                 color: #adb6bd;
@@ -141,41 +183,43 @@ export default {
                 float: left;
                 margin-left: 234px;
                 margin-right: 57px;
-                font: 20px/48px "微软雅黑";
+                font: 18px/48px "微软雅黑";
                 background: #78acff;
                 text-align: center;
                 color: #fff;
                 border-radius: 5px;
             }
             .one{
+                width: 100px;
                 height: 100%;
                 float: left;
                 color: #89969f;
                 margin-right: 86px;
                 text-align: center;
                 position: relative;
-                font: 19px/48px "微软雅黑";
+                font: 18px/48px "微软雅黑";
                 span{
                     width: 20px;
                     height: 2px;
                     position: absolute;
-                    left: 20px;
+                    left: 40px;
                     bottom: 2px;
                     background: #8b95a1;
                 }
             }
             .two{
+                width: 100px;
                 height: 100%;
                 float: left;
                 color: #89969f;
                 text-align: center;
                 position: relative;
-                font: 19px/48px "微软雅黑";
+                font: 18px/48px "微软雅黑";
                 span{
                     width: 20px;
                     height: 2px;
                     position: absolute;
-                    left: 20px;
+                    left: 40px;
                     bottom: 2px;
                     background: #8b95a1;
                 }

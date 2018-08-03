@@ -4,7 +4,7 @@
             <div class="top-index">
                 <div class="top-left">
                     <span class="iconfont lang">&#xe654;</span>
-                    <select class="lange" @change="handchange($event)">
+                    <select class="lange" @change="handchange($event)" ref="aaa">
                         <option class="desfont" v-for="(index,value) in langu" :value="value" :key="value">{{index}}</option>
                     </select>
                     <span class="iconfont xia">&#xe62d;</span>
@@ -14,7 +14,7 @@
                     <span class="desfont">APP{{$t("download")}}</span>
                 </div>
                  <div class="top-time">
-                    <span>2018.3.29</span>
+                    <span>2018-01-18</span>
                     <span>今天</span>
                     <span>星期四</span>
                     <span class="ma-left">15:06</span>
@@ -35,34 +35,23 @@ export default {
             ko:"한국어",
             ja:"日本語"
           },
-          onoff:'zh'
       }
+  },
+  mounted(){
+      let lan = window.localStorage.getItem('language')
+      if (lan) {
+           this.$refs.aaa.value = lan
+        }
   },
   methods:{
       handchange(event){
         this.$i18n.locale = event.target.value
         window.localStorage.setItem('language', event.target.value)
         window.localStorage.setItem('lang', this.langu[event.target.value])
-      }
+      },
   },
   computed:{
-      haha(){
-        let lan = window.localStorage.getItem('language')
-        if (lan) {
-            return lan
-        }else{
-            return zh
-        }
-      }
   },
-//   watch: {
-//       haha(){
-//         let lan = window.localStorage.getItem('language')
-//         if (lan) {
-//             return lan
-//         }
-//       }
-//   }
 }
 </script>
 <style  lang="less">
@@ -90,7 +79,7 @@ export default {
                 }
                 .lange{
                     background: transparent;
-                    width: 40px;
+                    width: 60px;
                     font-size: 16px;
                     float: left;
                     color: #b9bcc3;
@@ -141,6 +130,16 @@ export default {
                     margin-left: 3px;
                 }
             }
+        }
+    }
+    @media screen and (max-width: 1210px)and(min-width: 960px) {
+        #app .top-index{ 
+            width: 950px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .top-index{ 
+            width: 750px;
         }
     }
 </style>

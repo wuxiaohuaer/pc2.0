@@ -1,22 +1,12 @@
 <template>
     <div>
         <div class="center-title">
-            <ul class="center-ul">
-                <li>
-                    <router-link to="/center">{{$t("write_article")}}</router-link>
-                </li>
-                <li>
-                    <router-link to="/con">{{$t("content_management")}}</router-link>
-                </li>
-                <li>
-                    <router-link to="/extend">{{$t("asset_management")}}</router-link>
-                </li>
-                <li>
-                    <router-link to="/account">{{$t("account_information")}}</router-link>
-                </li>
-                <li>
-                    <router-link to="/market">{{$t("promote_the_market")}}</router-link>
-                </li>
+            <ul class="center-ul" ref="li">
+                <router-link tag="li" class="li" to="/center">{{$t("write_article")}}</router-link>
+                <router-link tag="li" class="li" to="/con">{{$t("content_management")}}</router-link>
+                <router-link tag="li" class="li" to="/extend">{{$t("asset_management")}}</router-link>
+                <router-link tag="li" class="li" to="/account">{{$t("account_information")}}</router-link>
+                <router-link tag="li" class="li" to="/market">{{$t("promote_the_market")}}</router-link>
             </ul>
         </div>
     </div>
@@ -26,6 +16,40 @@
 export default {
   name: 'CenterTitle',
   components:{
+  },
+  updated() {
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru') {
+         for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'lii'
+            //   console.log(this.$refs.li.children)
+         }
+      }else if(lang === 'en'){
+          for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'li1'
+         }
+      }else{
+          for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'li'
+         }
+      }
+  },
+  mounted (){
+      let lang = window.localStorage.getItem('language')
+      if (lang === 'ru') {
+         for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'lii'
+            //   console.log(this.$refs.li.children)
+         }
+      }else if(lang === 'en'){
+          for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'li1'
+         }
+      }else{
+          for (let i = 0; i < this.$refs.li.children.length; i++) {
+             this.$refs.li.children[i].className = 'li'
+         }
+      }
   }
 }
 </script>
@@ -38,11 +62,25 @@ export default {
         height: 100%;
         width: 100%;
         font: bold 18px/66px "宋体";
-        text-indent: 70px;
-        li{
+        .li{
             height: 56px;
             padding-top: 10px;
+            text-indent: 70px;
             background: url(../../../assets/img/logo11.png) no-repeat 25px 35px;
+        }
+        .lii{
+            width: 100%;
+            padding-left: 70px;
+            font: 12px/26px "宋体";
+            background: url(../../../assets/img/logo11.png) no-repeat 25px 35px;
+        }
+        .li1{
+            width: 100%;
+            height: 66px;
+            padding-left: 70px;
+            word-wrap:break-word;
+            font: 14px/66px "宋体";
+            background: url(../../../assets/img/logo11.png) no-repeat 25px 25px;
         }
     }
 }

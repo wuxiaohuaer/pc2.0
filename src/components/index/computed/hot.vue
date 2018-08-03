@@ -95,4 +95,18 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .hot-con img{ 
+            width: 90px;
+            margin-right: 5px;
+        }
+        #app .hot-des{ 
+            width: 150px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .hot {
+            display: none;
+        }
+    }
 </style>

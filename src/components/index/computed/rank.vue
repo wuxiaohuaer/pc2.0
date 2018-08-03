@@ -101,4 +101,17 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .rank-right {
+            width: 230px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .rank {
+            display: none;
+        }
+        #app .rank {
+            display: none;
+        }
+    }
 </style>
