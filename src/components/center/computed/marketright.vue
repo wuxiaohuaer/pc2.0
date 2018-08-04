@@ -68,12 +68,10 @@ export default {
               this.$refs.reward3.style.fontSize = '12px'; 
           }
       }else if(lang === 'zh'){
-        this.$refs.reward2.style.marginLeft = '80px'; 
-        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward1.style.fontSize = '14px';
+        this.$refs.reward2.style.fontSize = '14px';
         this.$refs.reward3.style.fontSize = '14px';
       }else{
-        this.$refs.reward2.style.marginLeft = '80px'; 
-        this.$refs.reward3.style.marginLeft = '80px'; 
         this.$refs.reward1.style.fontSize = '14px'; 
         this.$refs.reward2.style.fontSize = '14px'; 
         this.$refs.reward3.style.fontSize = '14px'; 
@@ -89,12 +87,10 @@ export default {
               this.$refs.reward3.style.fontSize = '12px'; 
           }
       }else if(lang === 'zh'){
-        this.$refs.reward2.style.marginLeft = '80px'; 
-        this.$refs.reward3.style.marginLeft = '80px'; 
+        this.$refs.reward1.style.fontSize = '14px';
+        this.$refs.reward2.style.fontSize = '14px'; 
         this.$refs.reward3.style.fontSize = '14px';
       }else{
-        this.$refs.reward2.style.marginLeft = '80px'; 
-        this.$refs.reward3.style.marginLeft = '80px'; 
         this.$refs.reward1.style.fontSize = '14px'; 
         this.$refs.reward2.style.fontSize = '14px'; 
         this.$refs.reward3.style.fontSize = '14px'; 
@@ -132,6 +128,7 @@ export default {
                     .reward{
                         height: 22px;
                         float: left;
+                        margin-right: 20px;
                         .des{
                             float: left;
                             font: 14px/22px "微软雅黑";
@@ -236,5 +233,26 @@ export default {
                 }
             }
         }
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-wrap  .content .market-bottom .table{
+            width: 670px;
+            margin-left: 0px;
+            .beizhu{
+                width: 240px;
+                height: 56px;
+            }
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-wrap  .content  .market-bottom .table{
+            width: 490px;
+            margin-left: 0px;
+            .beizhu{
+                width: 150px;
+                height: 56px;
+            }
+        }
+        
     }
 </style>

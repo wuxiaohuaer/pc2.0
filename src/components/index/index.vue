@@ -3,7 +3,7 @@
         <hd-head></hd-head>
         <div class="wrap">
             <div class="content">
-                <div class="left">
+                <div class="left" ref="left">
                     <index-swiper></index-swiper>
                     <IndexHq></IndexHq>
                     <index-news></index-news>
@@ -38,7 +38,8 @@ export default {
       IndexKuai,
       IndexRank,
       IndexHot
-  }
+  },
+
 }
 </script>
 <style lang="less">
@@ -81,5 +82,10 @@ export default {
             width: 740px;
         }
     }
+    // @media screen and (max-width: 740px) and (min-width: 320px) {
+    //     #app .wrap  .content .left{
+    //         width: "this.screenWidth";
+    //     }
+    // }
 
 </style>

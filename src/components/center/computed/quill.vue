@@ -55,4 +55,9 @@
             color: #c2c5ca;
         }
     }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .ql-toolbar {
+            height: 65px;
+        }
+    }
 </style> 

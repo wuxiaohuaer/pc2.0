@@ -1,77 +1,65 @@
 <template>
-    <div>
-        <div class="falsh-kuai">
-            <div class="falsh-title">
-                <h1>{{$t("news_flash")}}</h1>
-                <span class="sanjiao"></span>
-                <div class="time">
-                    <span class="week">星期日</span>
-                    <span class="month">7月27日</span>
-                    <span class="today">今天 ·</span>
-                </div>
+    <div class="falsh-kuai">
+        <div class="falsh-title">
+            <h1>{{$t("news_flash")}}</h1>
+            <span class="sanjiao"></span>
+            <div class="time">
+                <span class="week">星期日</span>
+                <span class="month">7月27日</span>
+                <span class="today">今天 ·</span>
             </div>
-            <div class="kuai-con">
-                <div class="kuai-left"></div>
-                <div class="kuai-right">
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <div class="bottom">
-                            <p class="sharing">
-                                <span class="iconfont">&#xe6e7;</span>
-                               {{$t("news_flash")}}
-                            </p>
-                        </div>
-                        <img class="logo" src="../../../assets/img/dian.png">
+        </div>
+        <div class="kuai-con">
+            <div class="kuai-left"></div>
+            <div class="kuai-right">
+                <div class="lis1" v-for="(index,value) in this.lists" :key="value">
+                    <p class="time">{{index.date}} {{index.time}}</p>
+                    <p class="des">{{index.content}}</p>
+                    <div class="bottom">
+                        <p class="sharing">
+                            <span class="iconfont">&#xe6e7;</span>
+                            {{$t("share ")}}
+                        </p>
                     </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <div class="bottom">
-                            <p class="sharing">
-                                <span class="iconfont">&#xe6e7;</span>
-                                {{$t("news_flash")}}
-                            </p>
-                        </div>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <div class="bottom">
-                            <p class="sharing">
-                                <span class="iconfont">&#xe6e7;</span>
-                               {{$t("news_flash")}}
-                            </p>
-                        </div>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <div class="bottom">
-                            <p class="sharing">
-                                <span class="iconfont">&#xe6e7;</span>
-                               {{$t("news_flash")}}
-                            </p>
-                        </div>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
+                    <img class="logo" src="../../../assets/img/dian.png">
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'FalshKuai',
   components:{
-  }
+  },
+  data(){
+      return{
+        lists:[]
+      }
+  },
+    methods: {
+        getdata1() {
+            let url = this.http+'/api.php/NewsFlash/lists/p/1/cid/46/access_token/'+this.token
+            fetch(url)
+                .then(e => e.json())
+                .then(e => {
+                    this.lists = e.data.lists
+                });
+            } 
+    },
+    computed: {
+        ...mapState(["token","http"])
+    },
+    mounted () {
+        this.getdata1()
+    }
 }
 </script>
 <style  lang="less">
     .falsh-kuai{
         width: 100%;
+        height: 100%;
         background: #fff;
         padding: 0 30px;
         margin-bottom:18px; 
@@ -81,6 +69,7 @@ export default {
             margin-left:-30px; 
             margin-bottom: 16px;
             h1{
+                width: 90px;
                 font: 18px/48px "微软雅黑";
                 float: left;
                 text-align: center;

@@ -110,4 +110,20 @@ export default {
             margin-left: 358px;
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .account-right input {
+            width: 540px;
+        }
+        #app .account-right .btn {
+            margin-left: 250px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .account-right input {
+            width: 410px;
+        }
+        #app .account-right .btn {
+            margin-left: 175px;
+        }
+    }
 </style>

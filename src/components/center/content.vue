@@ -36,7 +36,7 @@ export default {
         .content{
             width: 1200px;
             margin: 0 auto;
-            height: 2300px;
+            height: 1320px;
             .left{
                 margin-right: 10px;
                 float: left;
@@ -47,6 +47,30 @@ export default {
                 float: right;
                 background: #fff;
             }
+        }
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-wrap .content {
+            width: 950px;
+        }
+        #app .person-wrap  .content .left {
+            width: 210px;
+        }
+        #app .person-wrap  .content .right {
+            width: 730px;
+            padding:  28px 65px 0 35px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-wrap .content {
+            width: 740px;
+        }
+        #app .person-wrap  .content .left {
+            width: 180px;
+        }
+        #app .person-wrap  .content .right {
+            width: 550px;
+            padding:  28px 10px 0 10px;
         }
     }
 </style>

@@ -43,7 +43,7 @@ export default {
                 .then(e => e.json())
                 .then(e => {
                     this.lists = e.data.lists
-                    console.log(this.lists)
+                    // console.log(this.lists)
                 });
             } 
     },
@@ -129,7 +129,7 @@ export default {
         #app .index-news{
             width: 740px;
         }
-        #app .index-news .news-pic {
+        #app  .news-pic {
             width: 640px;
         }
         #app .index-news .index-news {
@@ -153,10 +153,10 @@ export default {
                 width: 740px;
             }
         }
-        #app .index-news .news-pic {
+        #app .news-pic {
             width: 740px;
         }
-        #app .index-news .index-news {
+        #app .index-news{
             width: 740px;
             img{
                 margin-right: 50px;

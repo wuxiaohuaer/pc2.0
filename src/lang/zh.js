@@ -90,6 +90,7 @@ export default {
     consume : '消耗',
     number : '数',
     nickname : '昵称',
+    share: '分享此文',
     please_enter_the_nickname : '请输入昵称',
     introduce : '介绍',
     please_enter_the_signature : '请输入签名',

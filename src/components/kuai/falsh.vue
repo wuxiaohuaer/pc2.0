@@ -38,9 +38,11 @@ export default {
         .content{
             width: 1200px;
             margin: 0 auto;
-            height: 2300px;
+            height: 2500px;
             .left{
                 width: 840px;
+                height: 100%;
+                overflow: hidden;
                 margin-right: 10px;
                 float: left;
             }

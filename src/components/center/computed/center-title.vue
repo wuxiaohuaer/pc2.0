@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <div class="center-title">
-            <ul class="center-ul" ref="li">
-                <router-link tag="li" class="li" to="/center">{{$t("write_article")}}</router-link>
-                <router-link tag="li" class="li" to="/con">{{$t("content_management")}}</router-link>
-                <router-link tag="li" class="li" to="/extend">{{$t("asset_management")}}</router-link>
-                <router-link tag="li" class="li" to="/account">{{$t("account_information")}}</router-link>
-                <router-link tag="li" class="li" to="/market">{{$t("promote_the_market")}}</router-link>
-            </ul>
-        </div>
+    <div class="center-title">
+        <ul class="center-ul" ref="li">
+            <router-link tag="li" class="li" to="/center">{{$t("write_article")}}</router-link>
+            <router-link tag="li" class="li" to="/con">{{$t("content_management")}}</router-link>
+            <router-link tag="li" class="li" to="/extend">{{$t("asset_management")}}</router-link>
+            <router-link tag="li" class="li" to="/account">{{$t("account_information")}}</router-link>
+            <router-link tag="li" class="li" to="/market">{{$t("promote_the_market")}}</router-link>
+        </ul>
     </div>
 </template>
 <script>
@@ -65,7 +63,7 @@ export default {
         .li{
             height: 56px;
             padding-top: 10px;
-            text-indent: 70px;
+            text-indent: 50px;
             background: url(../../../assets/img/logo11.png) no-repeat 25px 35px;
         }
         .lii{
@@ -79,9 +77,20 @@ export default {
             height: 66px;
             padding-left: 70px;
             word-wrap:break-word;
-            font: 14px/66px "宋体";
+            font: 14px/20px "宋体";
             background: url(../../../assets/img/logo11.png) no-repeat 25px 25px;
         }
     }
 }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .center-title {
+            width: 180px;
+        }
+        .li{
+            height: 56px;
+            padding-top: 10px;
+            text-indent: 50px;
+            background: url(../../../assets/img/logo11.png) no-repeat 25px 35px;
+        }
+    }
 </style>

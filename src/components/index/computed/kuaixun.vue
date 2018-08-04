@@ -13,24 +13,9 @@
             <div class="kuai-con">
                 <div class="kuai-left"></div>
                 <div class="kuai-right">
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格爱因斯坦字条拍卖 以4100美元的价格</p>
-                        <img class="logo" src="../../../assets/img/dian.png">
-                    </div>
-                    <div class="lis1">
-                        <p class="time">2012-12-12 20:10</p>
-                        <p class="des">爱因斯坦字条拍卖 以4100美元的价格</p>
+                    <div class="lis1" v-for="(index,value) in this.lists" :key="value">
+                        <p class="time">{{index.date}} {{index.time}}</p>
+                        <p class="des">{{index.title}}</p>
                         <img class="logo" src="../../../assets/img/dian.png">
                     </div>
                 </div>
@@ -39,10 +24,30 @@
     </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'IndexKuai',
   components:{
   },
+  data(){
+        return{
+            lists:[]
+        }
+    },
+    methods: {
+        getdata1() {
+            let url = this.http+'/api.php/NewsFlash/lists/p/1/cid/46/access_token/'+this.token
+            fetch(url)
+                .then(e => e.json())
+                .then(e => {
+                    this.lists = e.data.lists
+                    console.log(this.lists)
+                });
+            } 
+    },
+    computed: {
+        ...mapState(["token","http"])
+    },
   updated() {
       let lang = window.localStorage.getItem('language')
       if (lang === 'en') {
@@ -58,6 +63,7 @@ export default {
       }else{
           this.$refs.h1.style.fontSize = '18px'
       }
+      this.getdata1()
   }
 }
 </script>

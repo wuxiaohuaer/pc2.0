@@ -183,4 +183,36 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-wrap  .content .extend-right{
+            width: 720px;
+        }
+        #app .person-wrap  .content .tab-title{
+            width: 670px;
+        }
+        #app .person-wrap  .content .table{
+            width: 670px;
+            margin-left: 30px;
+            .beizhu{
+                width: 240px;
+                height: 56px;
+            }
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-wrap  .content .extend-right{
+            width: 545px;
+        }
+        #app .person-wrap  .content .tab-title{
+            width: 490px;
+        }
+        #app .person-wrap  .content .extend-tab .table{
+            width: 490px;
+            margin-left: 30px;
+            .beizhu{
+                width: 150px;
+                height: 56px;
+            }
+        }
+    }
 </style>

@@ -19,7 +19,8 @@ axios.post('http://192.168.0.234/api.php/AccessToken/getToken', params)
 export default new Vuex.Store({
   state: {
     token: localStorage.token,
-    http:'http://192.168.0.234/'
+    http:'http://192.168.0.234/',
+    innerwidth:document.documentElement.clientWidth
   },
   mutations: {
 

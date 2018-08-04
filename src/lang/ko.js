@@ -14,6 +14,7 @@ export default  {
     person_spacial_colum:'인물 칼럼.',
     /*首页*/
     load_more : '더 로드',
+    share: '이 글 을 나누다',
     /*新闻*/
     news_rankings : 'kbs 뉴스',
     hot_news : '핫 뉴스',

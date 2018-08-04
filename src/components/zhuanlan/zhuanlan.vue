@@ -1,7 +1,7 @@
 <template>
     <div>
         <hd-head></hd-head>
-        <div class="falsh-wrap">
+        <div class="zhuanlan-wrap">
             <div class="content">
                 <div class="left">
                     <computed></computed>
@@ -30,7 +30,7 @@ export default {
 }   
 </script>
 <style lang="less">
-    .falsh-wrap{
+    .zhuanlan-wrap{
         width: 100%;
         height: 100%;
         padding-top: 12px;

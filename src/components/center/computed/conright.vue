@@ -103,4 +103,27 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-wrap  .content .lis-left{
+            width: 450px;
+            .title{
+                font-size: 18px;
+            }
+        }
+        // #app .person-wrap  .content .market-bottom .reward{
+        //     display: block;
+        // }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-wrap  .content  .lis-left{
+            width: 365px;
+            .title{
+                font-size: 14px;
+            }
+            .des{
+                font-size: 12px;
+            }
+        }
+        
+    }
 </style>

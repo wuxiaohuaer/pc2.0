@@ -1,31 +1,29 @@
 <template>
-    <div>
-        <div class="center-write">
-            <input  type="text" class="text-title" :placeholder="$t('title_article')">
-            <quill-editor></quill-editor>
-            <div class="write-tag">
-                <span class="tag-title">{{$t("tag")}}</span>
-                <input type="text" name="" id="">
-                <span class="tag-add">+</span>
-                <span ref="des" class="tag-des">{{$t("tag_describe")}}</span>
-            </div>
-            <div class="write-abs">
-                <span class="tag-title">{{$t("content_summary")}}</span>
-                <textarea type="text"  :placeholder="$t('content_summary_describe')" name=""></textarea>
-            </div>
-            <div class="write-ups">
-                <span class="tag-title">{{$t("upload_the_cover")}}</span>
-                <div class="ups-kuang">+</div>
-            </div>
-            <div class="write-statement">
-                <span class="tag-title">{{$t("copyright_declarations")}}</span>
-                <div class="statement-txt">{{$t("copyright_declaration")}}</div>
-            </div>
-            <div class="write-btn" ref="btn">
-                <span class="bule">{{$t("publish")}}</span>
-                <span class="one">{{$t("deposit_draft")}}<span></span></span>
-                <span class="two">{{$t("preview")}}<span></span></span>
-            </div>
+    <div class="center-write">
+        <input  type="text" class="text-title" :placeholder="$t('title_article')">
+        <quill-editor></quill-editor>
+        <div class="write-tag">
+            <span class="tag-title">{{$t("tag")}}</span>
+            <input type="text" name="" id="">
+            <span class="tag-add">+</span>
+            <span ref="des" class="tag-des">{{$t("tag_describe")}}</span>
+        </div>
+        <div class="write-abs">
+            <span class="tag-title">{{$t("content_summary")}}</span>
+            <textarea type="text"  :placeholder="$t('content_summary_describe')" name=""></textarea>
+        </div>
+        <div class="write-ups">
+            <span class="tag-title">{{$t("upload_the_cover")}}</span>
+            <div class="ups-kuang">+</div>
+        </div>
+        <div class="write-statement">
+            <span class="tag-title">{{$t("copyright_declarations")}}</span>
+            <div class="statement-txt">{{$t("copyright_declaration")}}</div>
+        </div>
+        <div class="write-btn" ref="btn">
+            <span class="bule">{{$t("publish")}}</span>
+            <span class="one">{{$t("deposit_draft")}}<span></span></span>
+            <span class="two">{{$t("preview")}}<span></span></span>
         </div>
     </div>
 </template>
@@ -47,7 +45,7 @@ export default {
       }else if(lang === 'en'){
         this.$refs.btn.children[1].style.lineHeight = '18px'
       }else{
-        this.$refs.des.style.fontSize = '14px'
+        this.$refs.des.style.fontSize = '12px'
         this.$refs.btn.children[1].style.fontSize = '18px'
         this.$refs.btn.children[1].style.lineHeight = '48px'
         this.$refs.btn.children[2].style.fontSize = '18px'
@@ -66,7 +64,7 @@ export default {
       }else if(lang === 'en'){
         this.$refs.btn.children[1].style.lineHeight = '18px'
       }else{
-        this.$refs.des.style.fontSize = '14px'
+        this.$refs.des.style.fontSize = '12px'
         this.$refs.btn.children[1].style.fontSize = '18px'
         this.$refs.btn.children[1].style.lineHeight = '48px'
         this.$refs.btn.children[2].style.fontSize = '18px'
@@ -224,6 +222,25 @@ export default {
                     background: #8b95a1;
                 }
             }
+        }
+    }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .person-wrap  .content textarea{
+            width: 500px;
+        }
+        #app .person-wrap  .content .bule{
+            margin-left: 150px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .person-wrap  .content textarea {
+            width: 410px;   
+        }
+        #app .person-wrap  .content .statement-txt{
+            width: 410px;
+        }
+        #app .person-wrap  .content .bule{
+            margin-left: 50px;
         }
     }
 </style>

@@ -12,6 +12,7 @@ export default {
     download:'ダウンロード',
     person_spacial_colum:'人物コラム',
     register : '登録',
+    share: 'この文を共有する',
     /*首页*/
     load_more : 'アドイン',
     /*新闻*/

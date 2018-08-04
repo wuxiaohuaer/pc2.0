@@ -12,6 +12,7 @@ export default {
     download:'download',
     person_spacial_colum:'Personage column',
     register : 'register',
+    share: 'Share this article',
     /*首页*/
     load_more : 'Load more',
     /*新闻*/

@@ -135,6 +135,7 @@ export default  {
     get_60 : '60 секунд после приобретения вновь',
     phone_number_not_format : 'номер телефона в неверном формате',
     fail_in_send : 'Не удалось отправить',
+    share: 'разделить это сообщение',
     verifying_code_sent_phone : 'код проверки были направлены в ваш телефон',
     /*模型*/
     type_of_currency_cannot_be_empty : 'тип валюты не может быть пустым',
