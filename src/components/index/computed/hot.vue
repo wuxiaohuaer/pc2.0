@@ -104,7 +104,7 @@ export default {
             width: 150px;
         }
     }
-    @media screen and (max-width: 960px) and (min-width: 740px) {
+    @media screen and (max-width: 960px) and (min-width: 320px) {
         #app .hot {
             display: none;
         }

@@ -243,4 +243,22 @@ export default {
             margin-left: 50px;
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .person-wrap  .content .text-title {
+            margin-bottom: 0;
+        }
+        #app .person-wrap  .content textarea {
+            width: 70%;   
+        }
+        #app .person-wrap  .content .statement-txt{
+            width: 410px;
+        }
+        #app .person-wrap  .content .bule{
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        #app .person-wrap  .content .one{
+            margin-right: 5%;
+        }
+    }
 </style>

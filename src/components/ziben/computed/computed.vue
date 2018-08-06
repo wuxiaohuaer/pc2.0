@@ -187,4 +187,39 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .qukuailian .news-pic {
+            width: 640px;
+        }
+        #app .qukuailian.index-news {
+            width: 640px;
+            padding: 0 10px;
+            img{
+                margin-right: 10px;
+            }
+            .news-des{
+                width: 350px;
+                .news-author{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .qukuailian .news-pic {
+            width: 740px;
+        }
+        #app .qukuailian .index-news {
+            width: 740px;
+            img{
+                margin-right: 50px;
+            }
+            .news-des{
+                width: 410px;
+                .news-author{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 </style>

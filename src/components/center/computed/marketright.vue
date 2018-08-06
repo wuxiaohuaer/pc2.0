@@ -253,6 +253,13 @@ export default {
                 height: 56px;
             }
         }
-        
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .top-con  .btn{
+            margin-top: 20px;
+        }
+        #app .top-con .reward{
+            margin-right: 0;
+        }
     }
 </style>

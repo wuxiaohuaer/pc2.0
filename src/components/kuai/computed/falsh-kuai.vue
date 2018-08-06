@@ -169,4 +169,24 @@ export default {
             width: 650px;
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+
+        #app .falsh-kuai .time{
+            width: 60%;
+        }
+        #app .falsh-kuai .kuai-con .kuai-right{
+            width: 90%;
+            .lis1{
+                width: 100%;
+            }
+        }
+        .falsh-kuai{
+            .falsh-title{
+                h1{
+                    width: 10%;
+                    font: 14px/48px "微软雅黑";
+                }
+            }
+        }
+    }
 </style>

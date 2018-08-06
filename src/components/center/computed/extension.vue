@@ -215,4 +215,31 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .extend-right{
+            width: 100%;
+            .mid{
+                font-size: 16px;
+                .yue{
+                    margin-left: 10px;
+                }
+            }
+        }
+        #app .person-wrap  .content .tab-title{
+            width: 90%;
+            margin-left: 15px;
+        }
+        #app .person-wrap  .content .table{
+            width: 90%;
+            margin-left: 15px;
+            .beizhu{
+                width: 25%;
+                height: 56px;
+            }
+            .des{
+                width: 25%;
+                height: 56px;
+            }
+        }
+    }
 </style>

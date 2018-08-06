@@ -106,7 +106,7 @@ export default {
             width: 230px;
         }
     }
-    @media screen and (max-width: 960px) and (min-width: 740px) {
+    @media screen and (max-width: 960px) and (min-width: 320px) {
         #app .rank {
             display: none;
         }

@@ -100,4 +100,63 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .login-wrap {
+            margin-top: -140px;
+            padding: 100px 0;
+            height: 1000px;
+            .login{
+                width: 70%;
+                height: 300px;
+                padding: 0;
+                overflow: hidden;
+                h1{
+                    // width: 100%;
+                    margin-top: 20px;
+                    margin-bottom: 0;
+                    background-size:60% 60%; 
+                }
+                .input{
+                    width: 100%;
+                    height: 150px;
+                    margin-bottom: 15px;
+                    .one{
+                        background-size: 10% 40%;
+                        background-position: 20px;
+                        .text{
+                            width: 65%;
+                            height: 32px;
+                            text-indent: 12px;
+                            margin: 15px 0 0 52px;
+                            font: 12px/32px "微软雅黑";
+                            color: #999999;
+                            border-bottom: 2px solid #c0c3cc;
+                        }
+                    }
+                    .remove{
+                        width: 100%;
+                        height: 16px;
+                        margin-right: 10px;
+                        font: 12px/16px "微软雅黑";
+                        text-align: right;
+                        color: #2294ff;
+                    }
+                }
+                .btn{
+                    width: 30%;
+                    height: 24px;
+                    margin: 0 auto;
+                    font: 14px/24px "微软雅黑";
+                }
+                .btn1{
+                    width: 30%;
+                    height: 24px;
+                    
+                    margin: 0 auto;
+                    margin-top: 10px;
+                    font: 12px/24px "微软雅黑";
+                }
+            }
+        }
+    }
 </style>

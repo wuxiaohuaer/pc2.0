@@ -179,4 +179,15 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .qukuailian .index-news {
+            width: 100%;
+            .news-one{
+                width: 95%;
+            }
+            img{
+                margin-left: 3%;
+            }
+        }
+    }
 </style>

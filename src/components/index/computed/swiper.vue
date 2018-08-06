@@ -1,5 +1,4 @@
 <template>
-    
     <div class="swing-loading">
         <swiper>
             <swiper-slide class="swiper-slider" v-for="(index,value) in this.imgs" :key="value">
@@ -57,6 +56,14 @@ export default {
         }
         #app .img-swing {
             width: 740px;
+        }
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+         #app .swing-loading{
+            width: 100%;
+        }
+        #app .img-swing {
+            width: 100%;
         }
     }
 </style>

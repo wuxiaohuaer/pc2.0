@@ -174,4 +174,34 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .hq {
+            width: 100%;
+            padding: 0;
+            .head{
+                 .title{
+                    margin-left: 20px;
+                }
+                .hd-zhan{
+                    margin-left: 5px;
+                    display: none;
+                }
+            }
+            .hq-title{
+                width: 860px;  
+                span{
+                    font: 14px/49px "微软雅黑";
+                }
+                ul{
+                    width: 90%;
+                    li{
+                        font: 12px/49px "微软雅黑";
+                    }
+                }
+            }
+            .hq-content{
+                width: 860px;
+            }
+        }
+    }
 </style>

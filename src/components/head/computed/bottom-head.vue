@@ -1,26 +1,24 @@
 <template>
-    <div>
-        <div class="hdhead">
-            <router-link to="/">
-                <img class="imgs" src="../../../assets/img/logo.png">
-            </router-link>
-            <ul class="nav" ref="li" >
-                <router-link tag="li" class="nav-li" to="/">{{$t("home")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/falsh">{{$t("news_flash")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/qukuailian">{{$t("block_chain")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/ziben">{{$t("capital")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/jiaocheng">{{$t("course")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/wakuang">{{$t("mining")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/zhuanlan">{{$t("special_column")}}</router-link>
-                <router-link  tag="li" class="nav-li" to="/hangqing">{{$t("quotation")}}</router-link>
-            </ul>
-            <router-link tag="div" class="login" to="center">{{$t("login")}}</router-link>
-            <div class="srach">
-                <input class="srach-txt" type="text">
-                <span  class="iconfont">&#xe632;</span>
-            </div>
-            
+    <div class="hdhead">
+        <router-link to="/">
+            <img class="imgs" src="../../../assets/img/logo.png">
+        </router-link>
+        <ul class="nav" ref="li" >
+            <router-link tag="li" class="nav-li" to="/">{{$t("home")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/falsh">{{$t("news_flash")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/qukuailian">{{$t("block_chain")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/ziben">{{$t("capital")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/jiaocheng">{{$t("course")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/wakuang">{{$t("mining")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/zhuanlan">{{$t("special_column")}}</router-link>
+            <router-link  tag="li" class="nav-li" to="/hangqing">{{$t("quotation")}}</router-link>
+        </ul>
+        <router-link tag="div" class="login" to="/center">登录</router-link>
+        <div class="srach">
+            <span  class="iconfont">&#xe632;</span>
+            <input type="text" class="srach-txt">
         </div>
+        <span class="iconfont modil">&#xe632;</span>
     </div>
 </template>
 <script>
@@ -83,12 +81,13 @@ export default {
         padding: 0 15px;
     }
     .hdhead{
-        width: 1200px;
+        width: 100%;
         height: 76px;
         margin: 0 auto;
         .imgs{
             margin-right:30px;
             float: left;
+            margin-bottom: 0px;
         }
         .nav{
             height: 76px;
@@ -105,6 +104,7 @@ export default {
                 padding: 0 15px;
             }
         }
+        
         .srach{
             height: 28px;
             width: 190px;
@@ -125,6 +125,13 @@ export default {
                 margin-top: 4px;
                 margin-left: 5px;
             }
+        }
+        .modil{
+            display: none;
+            float: right;
+            font-size: 28px;
+            margin-right: 4%;
+            margin-top: 30px;
         }
         .login:hover{
                 cursor: pointer;
@@ -194,6 +201,34 @@ export default {
             .login{
                 width: 60px;
                 font-size: 12px;
+            }
+        }
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .hdhead{ 
+            width: 100%;
+            position: fixed;
+            top: 30px;
+            z-index: 999;
+            background: #fff;
+            .imgs{
+                margin-left: 30%;
+            }
+            .nav{
+                display: none;
+            }
+            .srach{
+                display: none;
+            }
+            .modil{
+                display: block;
+                float: right;
+            }
+            .nav-mobil{
+                display: block;
+            }
+            .login{
+                display: none;
             }
         }
     }

@@ -34,7 +34,7 @@ export default {
         padding-top: 12px;
         background: #f4f5f7;
         .content{
-            width: 1200px;
+            width: 100%;
             margin: 0 auto;
             height: 2300px;
             .left{
@@ -47,6 +47,19 @@ export default {
                 float: right;
                 background: #fff;
             }
+        }
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .person-wrap  .content {
+            width: 100%;
+            margin: 0;
+        }
+        #app .person-wrap  .content .left {
+            display: none;
+        }
+        #app .person-wrap  .content .right {
+            padding: 0 10px;
+            width: 100%;
         }
     }
 </style>

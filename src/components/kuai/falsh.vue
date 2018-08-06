@@ -52,4 +52,32 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 1210px)and (min-width: 960px) {
+        #app .falsh-wrap .content {
+            width: 950px;
+        }
+        #app .falsh-wrap  .content .left {
+            width: 640px;
+        }
+        #app .falsh-wrap  .content .right {
+            width: 300px;
+        }
+    }
+    @media screen and (max-width: 960px) and (min-width: 740px) {
+        #app .falsh-wrap  .content {
+            width: 740px;
+        }
+        #app .falsh-wrap  .content .left {
+            width: 740px;
+        }
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .falsh-wrap  .content {
+            width: 100%;
+            margin: 0;
+        }
+        #app .falsh-wrap  .content .left {
+            width: 100%;
+        }
+    }
 </style>

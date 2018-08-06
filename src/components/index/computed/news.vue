@@ -169,4 +169,39 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .index-news{
+            width: 100%;
+            padding: 0;
+            .news-one{
+                width: 100%;
+            }
+        }
+        #app .news-pic {
+            width: 100%;
+        }
+        #app .news-one{
+            width: 100%;
+            img{
+                width: 20%;
+                height: 35%;
+                margin-right: 20px;
+            }
+            .news-des{
+                width: 70%;
+                h1{
+                    font-size: 16px;
+                }
+                h3{
+                    font-size: 14px;
+                }
+                .last{
+                    font-size: 12px;
+                }
+                .news-author{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 </style>

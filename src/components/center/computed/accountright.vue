@@ -126,4 +126,15 @@ export default {
             margin-left: 175px;
         }
     }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .person-wrap .content .right .account-right{
+            width: 100%;
+        }
+        #app .account-right input {
+            width: 60%;
+        }
+        #app .account-right .btn {
+            margin-left: 175px;
+        }
+    }
 </style>

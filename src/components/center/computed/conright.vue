@@ -124,6 +124,21 @@ export default {
                 font-size: 12px;
             }
         }
-        
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .person-wrap  .content  .lis-left{
+            padding-left: 3%;
+            width: 65%;
+            
+            .title{
+                font-size: 14px;
+            }
+            .des{
+                font-size: 12px;
+            }
+        }
+        #app .person-wrap  .content .con-lis img{
+                width: 30%;
+            }
     }
 </style>

@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <div class="top-head">
-            <div class="top-index">
-                <div class="top-left">
-                    <span class="iconfont lang">&#xe654;</span>
-                    <select class="lange" @change="handchange($event)" ref="aaa">
-                        <option class="desfont" v-for="(index,value) in langu" :value="value" :key="value">{{index}}</option>
-                    </select>
-                    <span class="iconfont xia">&#xe62d;</span>
-                </div>
-                <div class="top-ipone">
-                    <span class="iconfont ipone">&#xe608;</span>
-                    <span class="desfont">APP{{$t("download")}}</span>
-                </div>
-                 <div class="top-time">
-                    <span>2018-01-18</span>
-                    <span>今天</span>
-                    <span>星期四</span>
-                    <span class="ma-left">15:06</span>
-                </div>
+    <div class="top-head">
+        <div class="top-index">
+            <div class="top-left">
+                <span class="iconfont lang">&#xe654;</span>
+                <select class="lange" @change="handchange($event)" ref="aaa">
+                    <option class="desfont" v-for="(index,value) in langu" :value="value" :key="value">{{index}}</option>
+                </select>
+                <span class="iconfont xia">&#xe62d;</span>
+            </div>
+            <div class="top-ipone">
+                <span class="iconfont ipone">&#xe608;</span>
+                <span class="desfont">APP{{$t("download")}}</span>
+            </div>
+            <div class="top-time">
+                <span>2018-01-18</span>
+                <span>今天</span>
+                <span>星期四</span>
+                <span class="ma-left">15:06</span>
             </div>
         </div>
     </div>
@@ -55,11 +53,14 @@ export default {
 }
 </script>
 <style  lang="less">
+    .mobile-tophead{
+        width: 100%;
+    }
     .top-head{
         width:100%;
         background:#424348;
         .top-index{
-            width: 1200px;
+            width: 100%;
             height:30px;
             margin: 0 auto;
             .top-left{
@@ -140,6 +141,19 @@ export default {
     @media screen and (max-width: 960px) and (min-width: 740px) {
         #app .top-index{ 
             width: 750px;
+        }
+    }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .top-head{
+            position: fixed;
+            top: 0px;
+            z-index: 999;
+        }
+        #app .top-index{ 
+            width: 100%;
+        }
+        #app .top-time{
+            display: none;
         }
     }
 </style>

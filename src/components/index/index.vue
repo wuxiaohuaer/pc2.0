@@ -27,6 +27,7 @@ import IndexPerson from '../index/computed/person'
 import IndexKuai from '../index/computed/kuaixun'
 import IndexRank from '../index/computed/rank'
 import IndexHot from '../index/computed/hot'
+import BtnSwiper from '../index/computed/btnswiper'
 export default {
   name: 'Index',
   components:{
@@ -37,9 +38,10 @@ export default {
       IndexPerson,
       IndexKuai,
       IndexRank,
-      IndexHot
+      IndexHot,
+      BtnSwiper
   },
-
+  
 }
 </script>
 <style lang="less">
@@ -82,10 +84,14 @@ export default {
             width: 740px;
         }
     }
-    // @media screen and (max-width: 740px) and (min-width: 320px) {
-    //     #app .wrap  .content .left{
-    //         width: "this.screenWidth";
-    //     }
-    // }
+    @media screen and (max-width: 740px) and (min-width: 320px) {
+        #app .wrap  .content {
+            width: 100%;
+            margin: 0;
+        }
+        #app .wrap  .content .left {
+            width: 100%;
+        }
+    }
 
 </style>

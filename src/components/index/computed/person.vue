@@ -122,7 +122,7 @@ export default {
             padding:17px  0;
         }
     }
-    @media screen and (max-width: 960px) and (min-width: 740px) {
+    @media screen and (max-width: 960px) and (min-width: 320px) {
         #app .person-pic {
             display: none;
         }

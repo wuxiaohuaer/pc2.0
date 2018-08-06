@@ -41,7 +41,6 @@
         width: 100%;
         margin-bottom: 95px;
         .ql-toolbar{
-            height: 50px;
             padding-top: 13px;
             padding-left: 20px;
             font: 16px "微软雅黑";
@@ -53,11 +52,6 @@
             height: 310px;
             font: 16px/24px "微软雅黑";
             color: #c2c5ca;
-        }
-    }
-    @media screen and (max-width: 960px) and (min-width: 740px) {
-        #app .ql-toolbar {
-            height: 65px;
         }
     }
 </style> 
