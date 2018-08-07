@@ -154,15 +154,19 @@ export default {
         }
     }
     @media screen and (max-width: 740px) and (min-width: 320px) {
-         #app .hq-con-des {
+        #app .hq-content {
             width: 100%;
+            overflow: auto;
+        }
+        #app .hq-con-des {
+            width: 860px;
             padding: 0;
             .hq-con-name {
                 padding:0 17px;
             }
         }
         #app .hq-con-row{
-            width: 100%;
+            width: 860px;
             .one, .two,.three {
                 margin-right: 50px;
             }

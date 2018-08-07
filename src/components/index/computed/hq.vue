@@ -20,23 +20,27 @@
         </header>
         <!-- 行情展示 -->
         <div class="hq-title">
-            <ul>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-                <li>BTC</li>
-            </ul>
-            <span class="iconfont">&#xe600;</span>
-            <span class="iconfont">&#xe601;</span>
+            <div class="title-ul">
+                 <ul>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                    <li>BTC</li>
+                </ul>
+            </div>
+            <div class="btn-title">
+                <span class="iconfont">&#xe600;</span>
+                <span class="iconfont">&#xe601;</span>
+            </div>
         </div>
         <hq-content></hq-content>
     </div>
@@ -108,16 +112,19 @@ export default {
                 float: left;
                 width: 7px;
                 padding: 0 3px;
+                float: left;
                 font: 16px/49px "微软雅黑";
             }
-            ul{
-                width: 750px;
-                height: 49px;
-                float: left;
-                li{
-                    float: left;
-                    padding: 0 13px;
-                    font: 14px/49px "微软雅黑";
+            .title-ul{
+                width: 100%;
+                ul{
+                    width: 100%;
+                    height: 49px;
+                    li{
+                        float: left;
+                        padding: 0 13px;
+                        font: 14px/49px "微软雅黑";
+                    }
                 }
             }
         }
@@ -188,19 +195,30 @@ export default {
                 }
             }
             .hq-title{
-                width: 860px;  
-                span{
-                    font: 14px/49px "微软雅黑";
-                }
-                ul{
-                    width: 90%;
-                    li{
-                        font: 12px/49px "微软雅黑";
+                width: 100%;
+                .btn-title{
+                    float: right;
+                    margin-right: 10px;
+                    span{
+                        font: 14px/49px "微软雅黑";
                     }
                 }
-            }
-            .hq-content{
-                width: 860px;
+                .title-ul{
+                    width: 88%;
+                    height: 49px;
+                    float: left;
+                    overflow: auto;
+                    ul{
+                        width: 600px;
+                        height: 49px;
+                        overflow-x: scroll;
+                        overflow-y: hidden;
+                        word-wrap: normal;
+                        li{
+                            font: 12px/49px "微软雅黑";
+                        }
+                    }
+                }
             }
         }
     }

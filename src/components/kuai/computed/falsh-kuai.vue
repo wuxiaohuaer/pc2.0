@@ -1,7 +1,7 @@
 <template>
     <div class="falsh-kuai">
         <div class="falsh-title">
-            <h1>{{$t("news_flash")}}</h1>
+            <h1 ref="h1">{{$t("news_flash")}}</h1>
             <span class="sanjiao"></span>
             <div class="time">
                 <span class="week">星期日</span>
@@ -52,7 +52,21 @@ export default {
         ...mapState(["token","http"])
     },
     mounted () {
+        let lang = window.localStorage.getItem('language')
+        if (lang === 'en') {
+            this.$refs.h1.style.font = '14px/24px "微软雅黑"'
+        }else{
+             this.$refs.h1.style.font = '16px/48px "微软雅黑"'
+        }
         this.getdata1()
+    },
+    updated() {
+        let lang = window.localStorage.getItem('language')
+        if (lang === 'en') {
+             this.$refs.h1.style.font = '14px/24px "微软雅黑"'
+        }else{
+            this.$refs.h1.style.font = '16px/48px "微软雅黑"'
+        }
     }
 }
 </script>
@@ -172,7 +186,8 @@ export default {
     @media screen and (max-width: 740px) and (min-width: 320px) {
 
         #app .falsh-kuai .time{
-            width: 60%;
+            width: 50%;
+            font-size: 14px;
         }
         #app .falsh-kuai .kuai-con .kuai-right{
             width: 90%;
@@ -183,8 +198,8 @@ export default {
         .falsh-kuai{
             .falsh-title{
                 h1{
-                    width: 10%;
-                    font: 14px/48px "微软雅黑";
+                    width: 20%;
+                    font: 12px/48px "微软雅黑";
                 }
             }
         }

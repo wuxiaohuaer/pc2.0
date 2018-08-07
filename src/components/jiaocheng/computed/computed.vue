@@ -4,17 +4,17 @@
            <div class="title">{{$t("block_chain_technology")}}</div>
             <div class="des-font">{{$t("block_chain_description")}}</div>
         </div>
-        <div class="index-news">
-            <div class="news-one">
-                <img src="../../../assets/img/pic1.png" alt="">
+       <div class="index-news">
+            <div class="news-one" v-for="(index,value) in this.lists" :key="value">
+                <img :src="http+index.img" alt="">
                 <div class="news-des">
-                    <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
-                    <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
+                    <h1>{{index.title}}</h1>
+                    <h3>{{index.depict}}</h3>
                     <div class="last">
                         <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
-                            <span class="news-author">金钱豹</span>
-                            <span class="news-time">4小时前</span>
+                            <span class="news-author">{{index.author}}</span>
+                            <span class="news-time">{{index.create_time}}</span>
                         </div>
                         <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
@@ -22,73 +22,7 @@
                         </div>
                         <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news-one">
-                <img src="../../../assets/img/pic1.png" alt="">
-                <div class="news-des">
-                    <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
-                    <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div class="last">
-                        <div class="news-left">
-                            <span class="iconfont news-logo">&#xe65d;</span>
-                            <span class="news-author">金钱豹</span>
-                            <span class="news-time">4小时前</span>
-                        </div>
-                        <div class="news-mid">
-                            <span class="iconfont news-logo">&#xe664;</span>
-                            <span class="news-author">交易所</span>
-                        </div>
-                        <div class="news-right">
-                            <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news-one">
-                <img src="../../../assets/img/pic1.png" alt="">
-                <div class="news-des">
-                    <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
-                    <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div class="last">
-                        <div class="news-left">
-                            <span class="iconfont news-logo">&#xe65d;</span>
-                            <span class="news-author">金钱豹</span>
-                            <span class="news-time">4小时前</span>
-                        </div>
-                        <div class="news-mid">
-                            <span class="iconfont news-logo">&#xe664;</span>
-                            <span class="news-author">交易所</span>
-                        </div>
-                        <div class="news-right">
-                            <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news-one">
-                <img src="../../../assets/img/pic1.png" alt="">
-                <div class="news-des">
-                    <h1>雅虎日本携2000万美金入场，计划开设加密货币交易所</h1>
-                    <h3>据当地媒体报道，互联网巨头雅虎（Yahoo!）的日本分部暂定于在2019年4月成立1个加密货币交易所。</h3>
-                    <div class="last">
-                        <div class="news-left">
-                            <span class="iconfont news-logo">&#xe65d;</span>
-                            <span class="news-author">金钱豹</span>
-                            <span class="news-time">4小时前</span>
-                        </div>
-                        <div class="news-mid">
-                            <span class="iconfont news-logo">&#xe664;</span>
-                            <span class="news-author">交易所</span>
-                        </div>
-                        <div class="news-right">
-                            <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
+                            <span class="news-author">{{index.view}}</span>
                         </div>
                     </div>
                 </div>
@@ -98,11 +32,34 @@
 </template>
 <script>
 import HqContent from '../../index/computed/hq-content'
+import {mapState} from 'vuex'
 export default {
-  name: 'HangQingdata',
+  name: 'Computed',
   components:{
       HqContent
-  }
+  },
+  data(){
+      return{
+        lists:[]
+      }
+  },
+  methods: {
+        getdata1() {
+            let url = this.http+'pc.php/Article/lists/p/1/cid/43/access_token/'+this.token
+            fetch(url)
+                .then(e => e.json())
+                .then(e => {
+                    this.lists = e.data.lists
+                    console.log(this.lists)
+                });
+            } 
+    },
+    computed: {
+        ...mapState(["token","http"])
+    },
+    mounted () {
+        this.getdata1()
+    }
 }
 </script>
 <style  lang="less">

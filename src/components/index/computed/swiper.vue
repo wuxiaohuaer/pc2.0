@@ -19,7 +19,7 @@ export default {
   },
   methods: {
       getdata() {
-        fetch(this.http+'api.php/Carousel/lists/access_token/'+this.token)
+        fetch(this.http+'pc.php/Carousel/lists/access_token/'+this.token)
             .then(e => e.json())
             .then(e => {
                 this.imgs = e.data.lists
@@ -39,7 +39,6 @@ export default {
         width: 840px;
         .img-swing{
             width: 840px;
-            height: 318px;
         }
     }
     @media screen and (max-width: 1210px)and (min-width: 960px) {
@@ -61,6 +60,10 @@ export default {
     @media screen and (max-width: 740px) and (min-width: 320px) {
          #app .swing-loading{
             width: 100%;
+            height: 150px;
+            .img-swing{
+                height: 160px;
+            }
         }
         #app .img-swing {
             width: 100%;

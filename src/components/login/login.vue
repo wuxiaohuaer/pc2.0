@@ -4,21 +4,53 @@
             <h1></h1>
             <div class="input">
                 <div class="one">
-                    <input class="text" type="text" placeholder="请输入手机号">
+                    <input class="text" type="text" placeholder="请输入手机号" v-model="iphone">
                 </div>
                 <div class="one">
-                    <input class="text" type="text" placeholder="密码（字母加数字6-18位）">
+                    <input class="text" type="password" placeholder="密码（字母加数字6-18位）" v-model="password">
                 </div>
                 <div class="remove">忘记密码</div>
             </div>
-            <router-link tag="div" class="btn" to="/">登录</router-link>
+            <div @click="getdata" class="btn">登录</div>
+            <!-- <router-link tag="div" @click="getdata" class="btn" to="/">登录</router-link> -->
             <router-link tag="div" class="btn1" to="/register">注册</router-link>
         </div>
     </div>
 </template>
 <script>
+import axios from 'axios'
+import { mapState } from "vuex";
+    var params = new URLSearchParams();
+    params.append('phone', 'this.iphone');
+    params.append('password', 'this.password');
 export default {
-    name:'Register'
+    name:'Register',
+    data(){
+        return{
+            iphone:'',
+            password:''
+        }
+    },
+    methods: {
+        getdata(){
+            // console.log(111)
+            let url = this.http+'pc.php/User/login/access_token/'+this.token
+            axios.post(url, params)
+                .then(function (res) {
+                    console.log(res.data.message)
+                    // this.$router.push({'path':'/'})
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    },
+    mounted () {
+        
+    },
+    computed: {
+    ...mapState(["token","http"])
+  },
 }
 </script>
 <style lang="less" scoped>
@@ -60,7 +92,6 @@ export default {
                     }
                 }
                 .remove{
-                    width: 100%;
                     height: 16px;
                     font: 12px/16px "微软雅黑";
                     text-align: right;
@@ -134,16 +165,11 @@ export default {
                         }
                     }
                     .remove{
-                        width: 100%;
-                        height: 16px;
-                        margin-right: 10px;
-                        font: 12px/16px "微软雅黑";
-                        text-align: right;
-                        color: #2294ff;
+                        margin-right: 25px;
                     }
                 }
                 .btn{
-                    width: 30%;
+                    width: 40%;
                     height: 24px;
                     margin: 0 auto;
                     font: 14px/24px "微软雅黑";

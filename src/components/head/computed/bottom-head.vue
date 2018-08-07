@@ -223,6 +223,7 @@ export default {
             .modil{
                 display: block;
                 float: right;
+                margin-top: 25px;
             }
             .nav-mobil{
                 display: block;

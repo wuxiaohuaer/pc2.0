@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         getdata1() {
-            let url = this.http+'api.php/Article/lists/limit/5/p/1/cid/46/access_token/'+this.token
+            let url = this.http+'pc.php/Article/lists/p/1/cid/39/access_token/'+this.token
             fetch(url)
                 .then(e => e.json())
                 .then(e => {
@@ -180,15 +180,18 @@ export default {
         #app .news-pic {
             width: 100%;
         }
-        #app .news-one{
+        #app .index-news .news-one{
             width: 100%;
+            padding-left: 4%;
             img{
                 width: 20%;
                 height: 35%;
-                margin-right: 20px;
+                margin-right: 10px;
             }
             .news-des{
-                width: 70%;
+                width: 69%;
+                margin-right: 3%;
+                margin-top: 10px;
                 h1{
                     font-size: 16px;
                 }
@@ -197,6 +200,9 @@ export default {
                 }
                 .last{
                     font-size: 12px;
+                    .news-left{
+                        float: none;
+                    }
                 }
                 .news-author{
                     margin-right: 0;

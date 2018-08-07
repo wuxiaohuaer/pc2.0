@@ -13,8 +13,8 @@
                     <div class="last">
                         <div class="news-left">
                             <span class="iconfont news-logo">&#xe65d;</span>
-                            <span class="news-author">金钱豹</span>
-                            <span class="news-time">4小时前</span>
+                            <span class="news-author">{{index.author}}</span>
+                            <span class="news-time">{{index.create_time}}</span>
                         </div>
                         <div class="news-mid">
                             <span class="iconfont news-logo">&#xe664;</span>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
+                            <span class="news-author">{{index.view}}</span>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ export default {
   },
     methods: {
         getdata1() {
-            let url = this.http+'/api.php/Article/lists/p/1/cid/39/access_token/'+this.token
+            let url = this.http+'/pc.php/Article/lists/p/1/cid/39/access_token/'+this.token
             fetch(url)
                 .then(e => e.json())
                 .then(e => {

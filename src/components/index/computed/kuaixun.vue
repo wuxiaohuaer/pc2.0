@@ -36,7 +36,7 @@ export default {
     },
     methods: {
         getdata1() {
-            let url = this.http+'/api.php/NewsFlash/lists/p/1/cid/46/access_token/'+this.token
+            let url = this.http+'/pc.php/NewsFlash/lists/limit/5/p/1/cid/46/access_token/'+this.token
             fetch(url)
                 .then(e => e.json())
                 .then(e => {
