@@ -108,23 +108,27 @@ export default {
         .hq-title{
             width: 100%;
             height: 49px;
-            span{
-                float: left;
-                width: 7px;
-                padding: 0 3px;
-                float: left;
-                font: 16px/49px "微软雅黑";
-            }
             .title-ul{
-                width: 100%;
+                width: 96%;
+                float: left;
                 ul{
-                    width: 100%;
+                    width: 860px;
                     height: 49px;
                     li{
                         float: left;
                         padding: 0 13px;
                         font: 14px/49px "微软雅黑";
                     }
+                }
+            }
+            .btn-title{
+                float: left;
+                span{
+                    float: left;
+                    width: 7px;
+                    padding: 0 3px;
+                    float: left;
+                    font: 16px/49px "微软雅黑";
                 }
             }
         }

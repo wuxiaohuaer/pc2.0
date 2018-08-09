@@ -17,6 +17,7 @@ import ZiBen from './components/ziben/ziben'
 import ZhuanLan from './components/zhuanlan/zhuanlan'
 import Login from './components/login/login.vue'
 import Register from './components/login/register.vue'
+import ChangePassword from './components/login/new.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -105,6 +106,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/changepass',
+      name: 'ChangePassword',
+      component: ChangePassword
     }
   ]
 })

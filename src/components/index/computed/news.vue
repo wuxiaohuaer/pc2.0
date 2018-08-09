@@ -1,9 +1,9 @@
 <template>
     <div>
         <img class="news-pic" src="../../../assets/img/img1.png" alt="">
-        <div class="index-news">
+        <div class="index-news" ref="news">
             <router-link class="news-one" tag="div" to="/xq" v-for="(index,value) in this.lists" :key="value">
-                <img :src="http+index.img" alt="">
+                <div> <img :src="http+index.img" alt=""></div>
                 <div class="news-des">
                     <h1>{{index.title}}</h1>
                     <h3>{{index.depict}}</h3>
@@ -33,26 +33,41 @@ export default {
     name: 'IndexNews',
     data(){
         return{
-            lists:[]
+            lists:[],
+            num : 0,
+            offsetTop:0
         }
     },
     methods: {
         getdata1() {
-            let url = this.http+'pc.php/Article/lists/p/1/cid/39/access_token/'+this.token
+            this.num++
+            let url = this.http+'pc.php/Article/lists/limit/10/p/'+this.num+'/cid/39/access_token/'+this.token
             fetch(url)
                 .then(e => e.json())
                 .then(e => {
                     this.lists = e.data.lists
-                    // console.log(this.lists)
                 });
-            } 
+            },
+        handleScroll(){
+            this.offsetTop = this.$refs.news.scrollTop
+            // var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            console.log(this.offsetTop);
+            
+        } 
     },
     mounted () {
         this.getdata1()
+        // this.handleScroll()
+         window.addEventListener('scroll', this.handleScroll)
     },
     computed: {
         ...mapState(["token","http"])
     },
+    watch: {
+        offsetTop(a,b){
+            console.log(a,b)
+        }
+    }
   }
 </script>
 <style lang="less">
@@ -67,7 +82,7 @@ export default {
         }
         .news-one{
             width: 100%;
-            height: 220px;
+            overflow: hidden;
             border-bottom: 1px dashed #ecedf1; 
             img{
                 width: 220px;
@@ -79,7 +94,6 @@ export default {
             }
             .news-des{
                 width: 530px;
-                height: 156px;
                 float: left;
                 margin-top: 35px;
                 h1{

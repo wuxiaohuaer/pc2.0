@@ -124,10 +124,9 @@ export default {
             }
         }
         .kuai-con{
-            height: 918px;
+            overflow: hidden;
             .kuai-left{
                 width: 15px;
-                height: 100%;
                 float: left;
                 margin-top: 10px;
                 margin-left: 10px;
@@ -135,7 +134,6 @@ export default {
             }
             .kuai-right{
                 width: 750px;
-                height: 400px;
                 float: left;
                 .lis1{
                     margin-bottom:18px; 
@@ -185,7 +183,7 @@ export default {
     }
     @media screen and (max-width: 740px) and (min-width: 320px) {
 
-        #app .falsh-kuai .time{
+        #app .falsh-kuai .falsh-title .time{
             width: 50%;
             font-size: 14px;
         }

@@ -1,17 +1,20 @@
 <template>
     <div class="login-wrap">
         <div class="login">
+            <div ref="kuang" v-if="onoff2" class="kuang">{{messages}}</div>
             <h1></h1>
             <div class="input">
                 <div class="one">
-                    <input class="text" type="text" placeholder="请输入手机号" v-model="iphone">
+                    <input  @change="handiphone" class="text" type="text" placeholder="请输入手机号" v-model="iphone">
+                    <span>{{errorText}}</span>
                 </div>
                 <div class="one">
-                    <input class="text" type="password" placeholder="密码（字母加数字6-18位）" v-model="password">
+                    <input @change="handpassword" class="text" type="password" placeholder="密码（字母加数字6-18位）" v-model="password">
+                    <span>{{errorText1}}</span>
                 </div>
-                <div class="remove">忘记密码</div>
+                <router-link tag="div" class="remove" to="/changepass">忘记密码</router-link>
             </div>
-            <div @click="getdata" class="btn">登录</div>
+            <div @click="login" class="btn">登录</div>
             <!-- <router-link tag="div" @click="getdata" class="btn" to="/">登录</router-link> -->
             <router-link tag="div" class="btn1" to="/register">注册</router-link>
         </div>
@@ -20,25 +23,65 @@
 <script>
 import axios from 'axios'
 import { mapState } from "vuex";
-    var params = new URLSearchParams();
-    params.append('phone', 'this.iphone');
-    params.append('password', 'this.password');
+
 export default {
     name:'Register',
     data(){
         return{
             iphone:'',
-            password:''
+            password:'',
+            errorText:"请输入手机号",
+            errorText1:'',
+            messages:'',
+            onoff2:false
         }
     },
     methods: {
-        getdata(){
-            // console.log(111)
+         handiphone(){
+            var pwdReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            if(this.iphone==""){
+                this.errorText = '手机号不能为空'
+            }else if(!pwdReg.test(this.iphone)){
+                 this.errorText = '请输入正确的手机号'
+            }else{
+                this.errorText = ''
+            }
+        },
+        handpassword(){
+             var pwdReg = /^[A-Za-z0-9_-]{6,18}$/;
+            if(this.password==""){
+                this.errorText1 = '密码不能为空'
+                
+            }else if(!pwdReg.test(this.password)){
+                 this.errorText1 = '密码为6-18位英文字母或数字'
+            }else{
+                this.errorText1 = ''
+            }
+        },
+        login(){
+            var params = new URLSearchParams();
+            params.append('phone', this.iphone);
+            params.append('password', this.password);
+            var that = this;
             let url = this.http+'pc.php/User/login/access_token/'+this.token
             axios.post(url, params)
                 .then(function (res) {
-                    console.log(res.data.message)
-                    // this.$router.push({'path':'/'})
+                   if(res.data.code == 200){
+                       that.onoff2= true
+                       that.messages = '登陆成功'
+                       setTimeout(function(){
+                           that.$router.push({'path':'/center'})
+                           that.onoff2= false
+                       },2000)
+                   }else{
+                        that.onoff2= true
+                        that.messages = res.data.message
+                        setTimeout(function(){
+                           that.onoff2= false
+                        },2000)
+                       console.log(res.data.message);
+                       
+                   }
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -64,9 +107,20 @@ export default {
             height: 450px;
             margin: 0 auto;
             background: #fff;
+            position: relative;
             border-radius: 20px;
             padding: 70px 50px 30px 65px;
             box-sizing: border-box;
+            .kuang{
+                width: 40%;
+                height: 100px;
+                text-align: center;
+                font: 16px/100px "微软雅黑";
+                background: #fff;
+                position: absolute;
+                top: 40%;
+                left: 30%;
+            }
             h1{
                 width: 385px;
                 height: 45px;
@@ -90,6 +144,11 @@ export default {
                         color: #999999;
                         border-bottom: 2px solid #c0c3cc;
                     }
+                    span{
+                        float: left;
+                        margin-left: 25%;
+                        font: 12px/16px "微软雅黑";
+                    }
                 }
                 .remove{
                     height: 16px;
@@ -107,7 +166,7 @@ export default {
                     margin-right: 5px;
                 }
             }
-            .btn,.btn1:hover{
+            .remove,.btn,.btn1:hover{
                 cursor: pointer;
             }
             .btn{

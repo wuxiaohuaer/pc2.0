@@ -32,13 +32,14 @@ export default {
 <style lang="less">
     .falsh-wrap{
         width: 100%;
-        height: 100%;
+        overflow: hidden;
         padding-top: 12px;
         background: #f4f5f7;
         .content{
             width: 1200px;
             margin: 0 auto;
-            height: 2500px;
+            overflow: hidden;
+            padding-bottom: 45px;
             .left{
                 width: 840px;
                 height: 100%;

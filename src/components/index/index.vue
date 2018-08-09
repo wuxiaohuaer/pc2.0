@@ -41,19 +41,18 @@ export default {
       IndexHot,
       BtnSwiper
   },
-  
 }
 </script>
 <style lang="less">
     .wrap{
         width: 100%;
-        height: 100%;
         padding-top: 12px;
         background: #f4f5f7;
         .content{
             width: 1200px;
             margin: 0 auto;
-            height: 2300px;
+            overflow: hidden;
+            padding-bottom: 45px;
             .left{
                 width: 840px;
                 margin-right: 10px;

@@ -27,14 +27,8 @@
                     <span>{{errorText2}}</span>
                 </div>
             </div>
-            <div class="xieyi">
-                <input type="checkbox" v-model="check" name="" id="">
-                <span>已阅读并同意《服务条款》</span>
-            </div>
-            <div v-show="onoff" ref="btn" class="btn" @click="register">注册</div>
-            <div v-show="!onoff" class="new-btn">注册</div>
-            <!-- <router-link tag="div" class="btn" to="/login">{{grapcode}}</router-link> -->
-            <router-link tag="div" class="btn1" to="/login">已有账号去登录</router-link>
+            <div v-show="onoff" ref="btn" class="btn" @click="change">确认修改</div>
+            <div v-show="!onoff" class="new-btn">确认修改</div>
         </div>
     </div>
 </template>
@@ -42,7 +36,7 @@
 import axios from 'axios'
 import { mapState } from "vuex";
 export default {
-    name:'Register',
+    name:'ChangePassword',
     data(){
         return{
             iphone:'',
@@ -50,8 +44,7 @@ export default {
             mailcode:'',
             password:'',
             againpass:'',
-            type:0,
-            check:false,
+            type:1,
             onoff:false,
             onoff2:true,
             onoff3:true,
@@ -91,18 +84,20 @@ export default {
                 this.errorText2 = ''
             }
         },
-        register(){
+        change(){
             var params = new URLSearchParams();
             params.append('phone', this.iphone);
-            params.append('sms_code', this.mailcode);
+            params.append('code', this.mailcode);
             params.append('password', this.password);
-            let url = this.http+'pc.php/User/register/access_token/'+this.token
+            let url = this.http+'pc.php/User/resetPassword/access_token/'+this.token
             var that = this;
             axios.post(url, params)
                 .then(function (res) {   
+                    console.log(res);
+                    
                     if (res.data.message == 'success') {
                         that.$refs.kuang.style.display = 'block'
-                        that.messages = "注册成功！"
+                        that.messages = "修改成功！"
                         setTimeout(function(){ 
                             that.$refs.kuang.style.display = 'none'
                             that.$router.push({'path':'/login'})
@@ -112,7 +107,7 @@ export default {
                         that.messages = res.data.message
                         setTimeout(function(){ 
                             that.$refs.kuang.style.display = 'none'
-                            that.$router.push({'path':'/register'})
+                            that.$router.push({'path':'/changepass'})
                         },2000)
                     }
                 })
@@ -165,8 +160,8 @@ export default {
         ...mapState(["token","http"])
     },
     watch:{
-        check(curVal){
-            if (curVal&&this.errorText==''&&this.errorText1==''&&this.errorText2=='') {
+        errorText(curVal){
+            if (curVal==''&&this.errorText1==''&&this.errorText2=='') {
                 this.onoff = true;
             }
         }
