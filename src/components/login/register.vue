@@ -55,7 +55,7 @@ export default {
             onoff:false,
             onoff2:true,
             onoff3:true,
-            errorText:"请输入手机号",
+            errorText:"",
             errorText1:"",
             errorText2:"",
             messages:'',

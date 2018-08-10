@@ -30,7 +30,7 @@ export default {
         return{
             iphone:'',
             password:'',
-            errorText:"请输入手机号",
+            errorText:"",
             errorText1:'',
             messages:'',
             onoff2:false

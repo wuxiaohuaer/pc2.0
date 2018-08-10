@@ -13,7 +13,7 @@
             <router-link  tag="li" class="nav-li" to="/zhuanlan">{{$t("special_column")}}</router-link>
             <router-link  tag="li" class="nav-li" to="/hangqing">{{$t("quotation")}}</router-link>
         </ul>
-        <router-link tag="div" class="login" to="/center">登录</router-link>
+        <router-link tag="div" class="login" to="/login">登录</router-link>
         <div class="srach">
             <span  class="iconfont">&#xe632;</span>
             <input type="text" class="srach-txt">
@@ -81,7 +81,7 @@ export default {
         padding: 0 15px;
     }
     .hdhead{
-        width: 100%;
+        width: 1200px;
         height: 76px;
         margin: 0 auto;
         .imgs{

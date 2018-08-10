@@ -6,7 +6,7 @@
                 <div class="left" ref="left">
                     <index-swiper></index-swiper>
                     <IndexHq></IndexHq>
-                    <index-news></index-news>
+                    <index-news :tokens="this.token"></index-news>
                 </div>
                 <div class="right">
                     <index-person></index-person>
@@ -28,8 +28,14 @@ import IndexKuai from '../index/computed/kuaixun'
 import IndexRank from '../index/computed/rank'
 import IndexHot from '../index/computed/hot'
 import BtnSwiper from '../index/computed/btnswiper'
+import axios from 'axios'
 export default {
   name: 'Index',
+  data(){
+      return {
+          token : ''
+      }
+  },
   components:{
       HdHead,
       IndexSwiper,
@@ -41,6 +47,31 @@ export default {
       IndexHot,
       BtnSwiper
   },
+  methods:{
+        gettoken(){
+            let that = this
+            var params = new URLSearchParams();
+            params.append('appid', '18172594CCC290DC');
+            params.append('appsecret', '05a5e180ad8c411e');
+            axios.post('http://192.168.0.234/pc.php/AccessToken/getToken', params)
+            .then(function (res) {
+                that.token = res.data.data.access_token
+                console.log(that.token);
+                
+                window.localStorage.setItem("token",res.data.data.access_token)
+                let token = localStorage.token;
+                if(token != res.data.data.access_token){
+                  window.localStorage.setItem("token",res.data.data.access_token)
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+  },
+  mounted ()  {
+      this.gettoken()
+  }
 }
 </script>
 <style lang="less">

@@ -8,60 +8,12 @@
                 <span class="iconfont">&#xe6e7;</span>
             </div>
             <swiper>
-                <swiper-slide>
-                    <div class="icon" >
+                <swiper-slide v-for="(index,value) in pages" :key="value" >
+                    <div class="icon"  v-for="item in index" :key="item.uid" @click="handleuid(item.uid)">
                         <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
+                            <img class="icon-img-content" :src="http+item.img" alt="">
                         </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
-                    </div>
-                    <div class="icon" >
-                        <div class="icon-img">
-                            <img class="icon-img-content" src="../../../assets/img/person1.png" alt="">
-                        </div>
-                        <p class="icon-desc">百币书生</p>
+                        <p class="icon-desc">{{item.username}}</p>
                     </div>
                 </swiper-slide>
             </swiper>
@@ -69,14 +21,57 @@
     </div>
 </template>
 <script>
+// import Bus from '../../../api/bus.js'
+import {mapState} from 'vuex'
 export default {
-  name: 'IndexPerson',
-  components:{
-  }
+    name: 'IndexPerson',
+    components:{
+    },
+    data(){
+        return{
+            lists:[],
+            num : 0,
+            offsetTop:0
+        }   
+    },
+    methods: {
+      getdata1() {
+            this.num++
+            let url = this.http+'pc.php/SpecialColumn/getList/type/1/access_token/'+this.token
+            fetch(url)
+                .then(e => e.json())
+                .then(e => {
+                    this.lists = e.data.lists
+                });
+            },
+        handleuid(id){
+            window.localStorage.setItem('uid',id)
+            // this.bus.$emit('handuid',id)
+            this.$router.push({'path':'/xq'})
+        }
+    },
+    mounted () {
+      this.getdata1()  
+    },
+    computed: {
+        ...mapState(["token","http"]),
+        pages(){
+            const pages = [];
+            this.lists.forEach((item, index) => {
+                const page = Math.floor(index / 9);
+                if (!pages[page]) {
+                    pages[page] = [];
+                }
+                pages[page].push(item);
+            });
+            
+            return pages;
+        }
+    },
 }
 </script>
 <style lang="less">
-    img{
+    .person-pic{
         margin-bottom: 10px;
     }
     .person{
@@ -105,6 +100,10 @@ export default {
         float: left;
         padding: 17px 14px 0 13px;
         box-sizing: border-box;
+        img{
+            width: 80px;
+            height: 80px;
+        }
         p{
             text-align: center;
         }

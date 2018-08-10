@@ -19,7 +19,7 @@
                         </div>
                         <div class="news-right">
                             <span class="iconfont news-logo">&#xe6e7;</span>
-                            <span class="news-author">48664</span>
+                            <span class="news-author">{{gettoken}}</span>
                         </div>
                     </div>
                 </div>
@@ -35,30 +35,34 @@ export default {
         return{
             lists:[],
             num : 0,
-            offsetTop:0
+            offsetTop:0,
+            gettoken:this.tokens
         }
     },
+    props:['tokens']
+    ,
     methods: {
         getdata1() {
             this.num++
-            let url = this.http+'pc.php/Article/lists/limit/10/p/'+this.num+'/cid/39/access_token/'+this.token
+            console.log(this.gettoken);
+            let url = this.http+'pc.php/Article/lists/limit/10/p/'+this.num+'/cid/39/access_token/'+ this.token
             fetch(url)
                 .then(e => e.json())
                 .then(e => {
                     this.lists = e.data.lists
                 });
             },
-        handleScroll(){
-            this.offsetTop = this.$refs.news.scrollTop
-            // var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            console.log(this.offsetTop);
+        // handleScroll(){
+        //     this.offsetTop = this.$refs.news.scrollTop
+        //     // var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        //     console.log(this.offsetTop);
             
-        } 
+        // } 
     },
     mounted () {
         this.getdata1()
         // this.handleScroll()
-         window.addEventListener('scroll', this.handleScroll)
+        //  window.addEventListener('scroll', this.handleScroll)
     },
     computed: {
         ...mapState(["token","http"])

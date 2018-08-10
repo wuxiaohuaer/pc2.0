@@ -18,7 +18,7 @@ Vue.prototype.$layer = layer(Vue);
 import zh_CN from 'vee-validate/dist/locale/zh_CN'
 import { Validator } from 'vee-validate';
 import VeeValidate from 'vee-validate';
-	
+Vue.prototype.bus= new Vue()
 Validator.addLocale(zh_CN);
 Vue.use(VeeValidate, {
   locale: 'zh_CN',

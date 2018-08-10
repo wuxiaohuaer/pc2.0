@@ -1,55 +1,43 @@
 import Vue from 'vue'
-import VeeValidate, {Validator} from 'vee-validate'
-import zh from './locale/zh_CN';//引入中文文件
-
-// 配置中文
-
-Validator.addLocale(zh)
-
-Vue.use(VeeValidate, {
-    locale: 'zh'
-  })
-
-Validator.extend('phone', {
-messages: {
-    zh: '请输入正确的手机或单位固话（格式：区号-电话）'
-},
-validate: value => {
-    return value.length === 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/.test(value) || /^(\d{3}-)(\d{8})$|^(\d{4}-)(\d{7})$|^(\d{4}-)(\d{8})$/.test(value)
+import axios from 'axios'
+gettoken(){
+    let that = this
+    var params = new URLSearchParams();
+    params.append('appid', '18172594CCC290DC');
+    params.append('appsecret', '05a5e180ad8c411e');
+    axios.post('http://192.168.0.234/pc.php/AccessToken/getToken', params)
+    .then(function (res) {
+        that.token = res.data.data.access_token
+        console.log(that.token);
+        
+        // window.localStorage.setItem("token",res.data.data.access_token)
+        // let token = localStorage.token;
+        // if(token != res.data.data.access_token){
+        //   window.localStorage.setItem("token",res.data.data.access_token)
+        // }
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 }
-})
-Validator.extend('email', {
-messages: {
-    zh: '请输入正确邮箱地址'
-},
-validate: value => {
-    return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value)
-}
-})
-const dict = {
-zh: {
-    custom: {
-    email: {
-        required: '邮箱不能为空' // messages can be strings as well.
-    },
-    phone: {
-        required: '手机不能为空'
-    },
-    company: {
-        required: '公司名称不能为空'
-    },
-    uname: {
-        required: '联系人不能为空'
-    },
-    duty: {
-        required: '职务信息不能为空'
-    },
-    code: {
-        required: '验证码不能为空'
-    }
-    }
-}
+export function fetch(url, params) {
+    return new Promise((resolve, reject) => {
+        axios.post(url, params)
+            .then(response => {
+                resolve(response.data);
+            })
+            .catch((error) => {
+              console.log(error)
+               reject(error)
+            })
+    })
 }
 
-Validator.updateDictionary(dict)
+export default {
+  // 获取我的页面的后台数据
+  mineBaseMsgApi() {
+     alert('进入api.js')
+    return fetch('/api/getBoardList');
+  }
+}
   

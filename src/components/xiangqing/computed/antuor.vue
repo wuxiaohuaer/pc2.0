@@ -3,20 +3,49 @@
         <div class="xq-antuor">
             <p class="border"></p>
             <div>
-                <img class="antuor-logo" src="../../../assets/img/logo5.png" alt="">
+                <img class="antuor-logo" :src="http+info.img" alt="">
                 <div class="antuor-des">
-                    <p class="des-title">金钱报</p>
-                    <p class="des-des">{{$t("article_num")}}：54564564</p>
-                    <p class="des-des">{{$t("article_views")}}：656545</p>
+                    
+                    <p class="des-title">{{info.username}}</p>
+                    <p class="des-des">{{$t("article_num")}}：{{info.article_counts}}</p>
+                    <p class="des-des">{{$t("article_views")}}：{{info.browse}}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+// import Bus from '../../../api/bus.js'
+import {mapState} from 'vuex'
 export default {
   name: 'XqAntuor',
   components:{
+  },
+  data(){
+      return {
+          uid:12,
+          info:{}
+      }
+  },
+  methods: {
+      getdata1() {
+            this.num++
+            let url = this.http+'pc.php/SpecialColumn/info/uid/'+this.uid+'/access_token/'+this.token
+            fetch(url)
+                .then(e => e.json())
+                .then(e => {
+                    this.info = e.data.info;
+                    
+                    // this.lists = e.data.lists
+                });
+            },
+  },
+  mounted () {
+      this.uid = localStorage.uid?localStorage.uid:this.uid
+      this.getdata1() 
+  },
+  computed:{
+    ...mapState(["token","http"]),
   }
 }
 </script>
@@ -35,6 +64,8 @@ export default {
             height: 123px;
             width: 100%;
             .antuor-logo{
+                width: 100px;
+                height: 100px;
                 margin: 0px 0 0 24px;
                 float: left;
                 margin-right: 20px;

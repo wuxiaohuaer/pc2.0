@@ -41,7 +41,6 @@ export default {
                 .then(e => e.json())
                 .then(e => {
                     this.lists = e.data.lists
-                    console.log(this.lists)
                 });
             } 
     },

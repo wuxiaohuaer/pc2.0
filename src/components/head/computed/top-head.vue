@@ -60,7 +60,7 @@ export default {
         width:100%;
         background:#424348;
         .top-index{
-            width: 100%;
+            width: 1200px;
             height:30px;
             margin: 0 auto;
             .top-left{

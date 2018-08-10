@@ -34,6 +34,7 @@ export default {
 <style lang="less">
     .head{
         width: 100%;
+        margin: 0 auto;
     }
     .nav-mobil{
         height: 24px;
